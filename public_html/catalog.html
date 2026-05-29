@@ -76,29 +76,55 @@
         input[type=range]::-webkit-slider-thumb { background: #b5000b; }
         input[type=range]::-webkit-slider-runnable-track { background: #e5eeff; }
         .card-hidden { display: none; }
+        .btn-primary {
+            background: linear-gradient(135deg, #b5000b 0%, #e30613 100%);
+            box-shadow: 0 4px 20px rgba(181, 0, 11, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(181, 0, 11, 0.4);
+        }
     </style>
 </head>
 <body class="bg-background text-on-background overflow-x-hidden">
 
     <!-- TopNavBar -->
-    <nav class="fixed top-0 w-full z-[100] bg-white/80 backdrop-blur-xl border-b border-on-surface/5 shadow-sm">
-        <div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-lg h-20">
-            <a class="flex items-center gap-xs" href="index.html">
+    <nav class="fixed top-0 w-full z-[100] bg-white/90 backdrop-blur-xl border-b border-on-surface/10 shadow-lg h-20 transition-all duration-300">
+        <div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-lg h-full">
+            <a class="flex items-center gap-xs hover:opacity-90 transition-opacity" href="index.html">
                 <span class="text-2xl md:text-3xl font-extrabold tracking-tight"><span class="text-on-background">Laksh</span> <span class="text-primary">Space</span></span>
             </a>
+            
+            <!-- Desktop Nav -->
             <div class="hidden md:flex items-center gap-lg">
-                <a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1" href="catalog.html">Office Space</a>
-                <a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors" href="catalog.html">Coworking</a>
-                <a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors" href="catalog.html">Virtual Office</a>
-                <a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors" href="catalog.html">Meeting Rooms</a>
+                <a class="nav-link text-secondary hover:text-primary transition-colors font-body-md text-body-md" href="catalog.html#office">Office Space</a>
+                <a class="nav-link text-secondary hover:text-primary transition-colors font-body-md text-body-md" href="catalog.html#coworking">Coworking</a>
+                <a class="nav-link text-secondary hover:text-primary transition-colors font-body-md text-body-md" href="catalog.html#virtual">Virtual Office</a>
+                <a class="nav-link text-secondary hover:text-primary transition-colors font-body-md text-body-md" href="catalog.html#meeting">Meeting Rooms</a>
             </div>
+            
             <div class="flex items-center gap-md">
-                <a href="https://wa.me/917348824242" target="_blank" class="hidden sm:flex items-center gap-xs text-secondary hover:text-primary transition-colors">
-                    <span class="material-symbols-outlined">call</span>
+                <a href="https://wa.me/917348824242" target="_blank" class="hidden md:flex items-center gap-xs text-secondary hover:text-primary transition-colors group">
+                    <span class="material-symbols-outlined group-hover:scale-110 transition-transform">call</span>
                     <span class="font-label-md text-label-md">WhatsApp</span>
                 </a>
-                <a href="contact.html#quick-connect" class="bg-primary text-on-primary px-md py-sm rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity active:scale-95">Book Tour</a>
+                <a href="contact.html#quick-connect" class="btn-primary text-on-primary px-md py-sm rounded-xl font-label-md text-label-md text-center hover:opacity-90 transition-opacity active:scale-95">Book Tour</a>
+                <button class="md:hidden flex items-center hover:bg-surface-container p-2 rounded-lg transition-colors" onclick="toggleMobileMenu()">
+                    <span class="material-symbols-outlined text-on-surface text-2xl" id="menu-icon">menu</span>
+                </button>
             </div>
+        </div>
+        
+        <!-- Mobile Dropdown Nav -->
+        <div class="hidden md:hidden w-full bg-white/95 backdrop-blur-xl border-b border-on-surface/10 px-margin-mobile py-md flex flex-col gap-sm shadow-lg" id="mobile-menu">
+            <a class="text-secondary hover:text-primary py-3 transition-colors font-body-md text-body-md border-b border-on-surface/5 hover:bg-surface-container px-3 rounded-lg" href="catalog.html#office" onclick="toggleMobileMenu()">Office Space</a>
+            <a class="text-secondary hover:text-primary py-3 transition-colors font-body-md text-body-md border-b border-on-surface/5 hover:bg-surface-container px-3 rounded-lg" href="catalog.html#coworking" onclick="toggleMobileMenu()">Coworking</a>
+            <a class="text-secondary hover:text-primary py-3 transition-colors font-body-md text-body-md border-b border-on-surface/5 hover:bg-surface-container px-3 rounded-lg" href="catalog.html#virtual" onclick="toggleMobileMenu()">Virtual Office</a>
+            <a class="text-secondary hover:text-primary py-3 transition-colors font-body-md text-body-md border-b border-on-surface/5 hover:bg-surface-container px-3 rounded-lg" href="catalog.html#meeting" onclick="toggleMobileMenu()">Meeting Rooms</a>
+            <a class="text-secondary hover:text-primary py-3 transition-colors font-body-md text-body-md flex items-center gap-sm hover:bg-surface-container px-3 rounded-lg" href="https://wa.me/917348824242" target="_blank">
+                <span class="material-symbols-outlined text-[20px]">call</span> WhatsApp Support
+            </a>
         </div>
     </nav>
 
@@ -376,10 +402,10 @@
             <div class="col-span-1">
                 <h6 class="text-white font-bold mb-md uppercase tracking-wider text-caption text-xs">Quick Links</h6>
                 <ul class="space-y-sm">
-                    <li><a class="text-gray-400 hover:text-white transition-colors hover:underline decoration-primary underline-offset-4 font-body-md text-sm" href="catalog.html">Office Space</a></li>
-                    <li><a class="text-gray-400 hover:text-white transition-colors hover:underline decoration-primary underline-offset-4 font-body-md text-sm" href="catalog.html">Coworking</a></li>
-                    <li><a class="text-gray-400 hover:text-white transition-colors hover:underline decoration-primary underline-offset-4 font-body-md text-sm" href="catalog.html">Virtual Office</a></li>
-                    <li><a class="text-gray-400 hover:text-white transition-colors hover:underline decoration-primary underline-offset-4 font-body-md text-sm" href="catalog.html">Meeting Rooms</a></li>
+                    <li><a class="text-gray-400 hover:text-white transition-colors hover:underline decoration-primary underline-offset-4 font-body-md text-sm" href="catalog.html#office">Office Space</a></li>
+                    <li><a class="text-gray-400 hover:text-white transition-colors hover:underline decoration-primary underline-offset-4 font-body-md text-sm" href="catalog.html#coworking">Coworking</a></li>
+                    <li><a class="text-gray-400 hover:text-white transition-colors hover:underline decoration-primary underline-offset-4 font-body-md text-sm" href="catalog.html#virtual">Virtual Office</a></li>
+                    <li><a class="text-gray-400 hover:text-white transition-colors hover:underline decoration-primary underline-offset-4 font-body-md text-sm" href="catalog.html#meeting">Meeting Rooms</a></li>
                 </ul>
             </div>
             <div class="col-span-1">
@@ -441,6 +467,26 @@
             });
         });
 
+        // Hash-based filtering
+        function applyHashFilter() {
+            const hash = window.location.hash.substring(1); // remove '#'
+            if (hash) {
+                const targetBtn = document.querySelector(`.chip-btn[data-filter="${hash}"]`);
+                if (targetBtn) {
+                    targetBtn.click();
+                }
+            } else {
+                const allBtn = document.querySelector('.chip-btn[data-filter="all"]');
+                if (allBtn) {
+                    allBtn.click();
+                }
+            }
+        }
+
+        // Apply on load and on hash change
+        window.addEventListener('load', applyHashFilter);
+        window.addEventListener('hashchange', applyHashFilter);
+
         // Seat counter
         function adjustSeat(delta) {
             const inp = document.getElementById('seat-count');
@@ -453,6 +499,19 @@
             const nav = document.querySelector('nav');
             nav.classList.toggle('shadow-md', window.scrollY > 20);
         });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.innerText = 'close';
+            } else {
+                menu.classList.add('hidden');
+                icon.innerText = 'menu';
+            }
+        }
     </script>
 </body>
 </html>
