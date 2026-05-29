@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta name="theme-color" content="#e30613"/>
+    <title>Laksh Space | Luxury Admin Dashboard</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "background": "#f8f9ff",
+                "on-tertiary-fixed-variant": "#005236",
+                "on-surface-variant": "#5e3f3b",
+                "on-background": "#0b1c30",
+                "on-secondary-fixed-variant": "#404758",
+                "on-primary-fixed-variant": "#930007",
+                "on-error": "#ffffff",
+                "surface-container-low": "#eff4ff",
+                "surface-variant": "#d3e4fe",
+                "on-primary": "#ffffff",
+                "surface-bright": "#f8f9ff",
+                "surface-container": "#e5eeff",
+                "secondary-container": "#d9dff5",
+                "inverse-surface": "#213145",
+                "on-secondary": "#ffffff",
+                "error-container": "#ffdad6",
+                "primary": "#b5000b",
+                "on-tertiary-fixed": "#002113",
+                "primary-fixed-dim": "#ffb4aa",
+                "inverse-primary": "#ffb4aa",
+                "tertiary-fixed": "#6ffbbe",
+                "on-primary-fixed": "#410001",
+                "secondary-fixed-dim": "#c0c6db",
+                "secondary-fixed": "#dce2f7",
+                "on-surface": "#0b1c30",
+                "surface": "#f8f9ff",
+                "surface-container-highest": "#d3e4fe",
+                "on-secondary-container": "#5c6274",
+                "error": "#ba1a1a",
+                "outline-variant": "#e9bcb6",
+                "on-tertiary": "#ffffff",
+                "on-secondary-fixed": "#141b2b",
+                "tertiary-fixed-dim": "#4edea3",
+                "surface-tint": "#c0000c",
+                "surface-container-high": "#dce9ff",
+                "surface-dim": "#cbdbf5",
+                "primary-fixed": "#ffdad5",
+                "on-primary-container": "#fff5f3",
+                "tertiary-container": "#008158",
+                "surface-container-lowest": "#ffffff",
+                "inverse-on-surface": "#eaf1ff",
+                "outline": "#936e69",
+                "tertiary": "#006545",
+                "secondary": "#575e70",
+                "primary-container": "#e30613",
+                "on-tertiary-container": "#dbffe9",
+                "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.5rem",
+                "lg": "0.75rem",
+                "xl": "1rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "margin-mobile": "16px",
+                "gutter": "24px",
+                "md": "24px",
+                "lg": "48px",
+                "sm": "12px",
+                "base": "8px",
+                "xl": "80px",
+                "container-max": "1280px",
+                "xs": "4px"
+            },
+            "fontFamily": {
+                "headline-lg-mobile": ["Inter"],
+                "headline-lg": ["Inter"],
+                "label-md": ["Inter"],
+                "body-lg": ["Inter"],
+                "display-lg": ["Inter"],
+                "headline-md": ["Inter"],
+                "body-md": ["Inter"],
+                "caption": ["Inter"]
+            },
+            "fontSize": {
+                "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                "display-lg": ["clamp(48px, 5vw, 72px)", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                "caption": ["12px", {"lineHeight": "16px", "letterSpacing": "0", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9ff;
+            color: #0b1c30;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(15, 23, 42, 0.05);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar-active {
+            background: linear-gradient(135deg, #b5000b 0%, #e30613 100%);
+            color: #ffffff !important;
+            box-shadow: 0 4px 15px rgba(181, 0, 11, 0.2);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for premium feel */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(11, 28, 48, 0.1);
+            border-radius: 99px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(181, 0, 11, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background overflow-hidden h-screen flex">
+
+    <!-- SideNavBar -->
+    <aside class="fixed inset-y-0 left-0 w-80 z-[110] bg-surface flex flex-col h-full p-md shadow-2xl transition-transform duration-300 ease-in-out md:relative md:translate-x-0 -translate-x-full border-r border-on-surface/5" id="side-nav">
+        <div class="mb-lg flex flex-col gap-sm">
+            <a href="index.html" class="inline-block hover:opacity-90 transition-opacity">
+                <span class="text-2xl md:text-3xl font-extrabold tracking-tight"><span class="text-on-background">Laksh</span> <span class="text-primary">Space</span></span>
+            </a>
+            <p class="font-label-md text-caption text-secondary opacity-70">Luxury Space Management</p>
+        </div>
+        
+        <nav class="flex-grow space-y-sm">
+            <a class="flex items-center gap-md p-md sidebar-active text-white rounded-xl transition-all shadow-sm" href="admin.html">
+                <span class="material-symbols-outlined">work</span>
+                <span class="font-label-md text-label-md">Workspace Leads</span>
+            </a>
+            <a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container hover:text-primary rounded-xl transition-all" href="catalog.html">
+                <span class="material-symbols-outlined">storefront</span>
+                <span class="font-label-md text-label-md">View Live Catalog</span>
+            </a>
+            <a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container hover:text-primary rounded-xl transition-all" href="contact.html">
+                <span class="material-symbols-outlined">support_agent</span>
+                <span class="font-label-md text-label-md">Contact Settings</span>
+            </a>
+            <a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container hover:text-primary rounded-xl transition-all" href="index.html">
+                <span class="material-symbols-outlined">home</span>
+                <span class="font-label-md text-label-md">Main Website</span>
+            </a>
+        </nav>
+        
+        <div class="mt-auto space-y-base pt-lg border-t border-on-surface/5">
+            <a href="catalog.html" class="block w-full bg-primary text-center text-white py-md rounded-xl font-label-md text-label-md hover:opacity-95 transition-opacity active:scale-[0.98] transition-transform">
+                Explore Spaces
+            </a>
+            <a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container-high rounded-xl transition-all" href="index.html">
+                <span class="material-symbols-outlined">logout</span>
+                <span class="font-label-md text-label-md">Log Out</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow h-screen overflow-y-auto bg-background/50 relative">
+        
+        <!-- Top Utility Bar -->
+        <header class="h-20 flex items-center justify-between px-lg glass-card sticky top-0 z-50 rounded-none border-t-0 border-x-0">
+            <div class="flex items-center gap-md">
+                <button class="md:hidden text-primary" onclick="toggleSidebar()">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <h2 class="font-headline-md text-headline-md text-on-background tracking-tight">Management Dashboard</h2>
+            </div>
+            <div class="flex items-center gap-md">
+                <button onclick="exportCSV()" class="flex items-center gap-sm px-md py-sm border border-outline/20 rounded-lg hover:bg-surface-container transition-colors font-label-md text-label-md text-on-surface">
+                    <span class="material-symbols-outlined text-[20px]">file_download</span>
+                    Export CSV
+                </button>
+                <button onclick="downloadReport()" class="flex items-center gap-sm px-md py-sm bg-inverse-surface text-white rounded-lg hover:opacity-90 transition-opacity font-label-md text-label-md">
+                    <span class="material-symbols-outlined text-[20px]">picture_as_pdf</span>
+                    Download Report
+                </button>
+            </div>
+        </header>
+
+        <div class="p-lg max-w-container-max mx-auto space-y-lg">
+            
+            <!-- Notification Toast Container -->
+            <div id="toast" class="hidden fixed bottom-6 right-6 bg-inverse-surface text-white px-md py-sm rounded-xl shadow-2xl flex items-center gap-sm z-[150] transition-opacity duration-300 opacity-0">
+                <span class="material-symbols-outlined text-primary">check_circle</span>
+                <span id="toast-text" class="font-label-md">Action successful</span>
+            </div>
+
+            <!-- Metrics Grid -->
+            <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+                <div class="glass-card p-md rounded-xl space-y-sm">
+                    <div class="flex justify-between items-start">
+                        <span class="material-symbols-outlined p-base bg-primary/10 text-primary rounded-lg">group</span>
+                        <span class="text-on-tertiary-fixed-variant font-label-md text-label-md bg-tertiary-fixed/30 px-sm py-xs rounded-full">+12%</span>
+                    </div>
+                    <div>
+                        <p class="font-label-md text-label-md text-secondary">Active Leads</p>
+                        <p class="font-headline-md text-headline-md text-on-background" id="metric-leads">3</p>
+                    </div>
+                </div>
+                <div class="glass-card p-md rounded-xl space-y-sm">
+                    <div class="flex justify-between items-start">
+                        <span class="material-symbols-outlined p-base bg-primary/10 text-primary rounded-lg">event_available</span>
+                        <span class="text-on-tertiary-fixed-variant font-label-md text-label-md bg-tertiary-fixed/30 px-sm py-xs rounded-full">+5.2%</span>
+                    </div>
+                    <div>
+                        <p class="font-label-md text-label-md text-secondary">Bookings This Month</p>
+                        <p class="font-headline-md text-headline-md text-on-background">42</p>
+                    </div>
+                </div>
+                <div class="glass-card p-md rounded-xl space-y-sm">
+                    <div class="flex justify-between items-start">
+                        <span class="material-symbols-outlined p-base bg-primary/10 text-primary rounded-lg">trending_up</span>
+                        <span class="text-on-tertiary-fixed-variant font-label-md text-label-md bg-tertiary-fixed/30 px-sm py-xs rounded-full">+21%</span>
+                    </div>
+                    <div>
+                        <p class="font-label-md text-label-md text-secondary">Revenue Growth</p>
+                        <p class="font-headline-md text-headline-md text-on-background">₹8,42,000</p>
+                    </div>
+                </div>
+                <div class="glass-card p-md rounded-xl space-y-sm">
+                    <div class="flex justify-between items-start">
+                        <span class="material-symbols-outlined p-base bg-primary/10 text-primary rounded-lg">verified_user</span>
+                        <span class="text-on-tertiary font-label-md text-label-md bg-tertiary px-sm py-xs rounded-full">94.8%</span>
+                    </div>
+                    <div>
+                        <p class="font-label-md text-label-md text-secondary">Retention Rate</p>
+                        <p class="font-headline-md text-headline-md text-on-background">94.8%</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lead Pipeline & Content Management Bento -->
+            <section class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+                
+                <!-- Lead Pipeline (Main Panel) -->
+                <div class="lg:col-span-2 glass-card rounded-xl flex flex-col overflow-hidden">
+                    <div class="p-md border-b border-on-surface/5 flex justify-between items-center">
+                        <h3 class="font-headline-md text-headline-md text-on-background">Lead Pipeline</h3>
+                        <div class="flex gap-xs bg-surface-container rounded-lg p-xs">
+                            <button class="px-md py-sm bg-white shadow-sm rounded-md font-label-md text-label-md text-on-surface">Live Feeds</button>
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto flex-grow">
+                        <table class="w-full text-left">
+                            <thead class="bg-surface-container/30 border-b border-on-surface/5">
+                                <tr>
+                                    <th class="p-md font-label-md text-label-md text-secondary">Name</th>
+                                    <th class="p-md font-label-md text-label-md text-secondary">Requirement</th>
+                                    <th class="p-md font-label-md text-label-md text-secondary">Status</th>
+                                    <th class="p-md font-label-md text-label-md text-secondary text-right">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-on-surface/5" id="leads-table-body">
+                                <!-- Dynamically loaded -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="p-md mt-auto border-t border-on-surface/5 flex justify-between items-center">
+                        <button onclick="clearAllLeads()" class="text-xs text-red-600 hover:text-red-800 transition-colors font-semibold">Clear All Leads</button>
+                        <span class="text-caption text-secondary" id="total-leads-span">3 pipeline leads</span>
+                    </div>
+                </div>
+
+                <!-- Content Management Column -->
+                <div class="space-y-gutter">
+                    
+                    <!-- Workspace Pricing editor -->
+                    <div class="glass-card rounded-xl p-md">
+                        <div class="flex justify-between items-center mb-md">
+                            <h4 class="font-headline-md text-headline-md text-on-background text-[18px]">Workspace Plans</h4>
+                            <button onclick="togglePriceEdit()" id="price-edit-btn" class="material-symbols-outlined text-secondary cursor-pointer hover:text-primary transition-colors">edit_square</button>
+                        </div>
+                        
+                        <!-- List view -->
+                        <div class="space-y-sm" id="price-list-view">
+                            <div class="flex items-center justify-between p-sm rounded-lg hover:bg-surface-container transition-colors">
+                                <span class="font-body-md text-body-md text-on-background">Hot Desk</span>
+                                <span class="font-label-md text-label-md text-primary font-bold" id="price-val-hot">₹499/day</span>
+                            </div>
+                            <div class="flex items-center justify-between p-sm rounded-lg hover:bg-surface-container transition-colors">
+                                <span class="font-body-md text-body-md text-on-background">Dedicated Desk</span>
+                                <span class="font-label-md text-label-md text-primary font-bold" id="price-val-ded">₹16,999/mo</span>
+                            </div>
+                            <div class="flex items-center justify-between p-sm rounded-lg hover:bg-surface-container transition-colors">
+                                <span class="font-body-md text-body-md text-on-background">Private Cabin</span>
+                                <span class="font-label-md text-label-md text-primary font-bold" id="price-val-priv">₹8,999/mo</span>
+                            </div>
+                        </div>
+
+                        <!-- Edit Form view (hidden by default) -->
+                        <form class="space-y-sm hidden" id="price-edit-view" onsubmit="savePrices(event)">
+                            <div class="flex flex-col gap-1">
+                                <label class="text-xs font-bold text-secondary">Hot Desk Price</label>
+                                <input class="p-2 border border-outline-variant rounded-lg text-sm bg-white" type="text" id="edit-hot" required>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <label class="text-xs font-bold text-secondary">Dedicated Desk Price</label>
+                                <input class="p-2 border border-outline-variant rounded-lg text-sm bg-white" type="text" id="edit-ded" required>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <label class="text-xs font-bold text-secondary">Private Cabin Price</label>
+                                <input class="p-2 border border-outline-variant rounded-lg text-sm bg-white" type="text" id="edit-priv" required>
+                            </div>
+                            <div class="flex gap-2 pt-2">
+                                <button type="button" onclick="togglePriceEdit()" class="flex-1 py-2 text-xs border rounded-lg hover:bg-gray-50 transition-colors">Cancel</button>
+                                <button type="submit" class="flex-1 py-2 text-xs bg-primary text-white font-bold rounded-lg hover:opacity-90 transition-colors">Save Details</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Manage Gallery Preview -->
+                    <div class="glass-card rounded-xl p-md overflow-hidden">
+                        <div class="flex justify-between items-center mb-md">
+                            <h4 class="font-headline-md text-headline-md text-on-background text-[18px]">Asset Gallery</h4>
+                            <span class="material-symbols-outlined text-secondary">image</span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-sm">
+                            <div class="aspect-square bg-surface-container rounded-md overflow-hidden group relative cursor-pointer border border-on-surface/5">
+                                <img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" alt="Office space" src="images-optimized/galery-images/GALO0952.webp"/>
+                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                                    <span class="material-symbols-outlined text-white text-[16px]">visibility</span>
+                                </div>
+                            </div>
+                            <div class="aspect-square bg-surface-container rounded-md overflow-hidden group relative cursor-pointer border border-on-surface/5">
+                                <img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" alt="Office space" src="images-optimized/galery-images/IMG_6789.webp"/>
+                                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                                    <span class="material-symbols-outlined text-white text-[16px]">visibility</span>
+                                </div>
+                            </div>
+                            <div class="aspect-square bg-surface-container rounded-md overflow-hidden flex items-center justify-center border-2 border-dashed border-outline/20 hover:border-primary/40 cursor-pointer transition-all">
+                                <span class="material-symbols-outlined text-outline">add</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonials -->
+                    <div class="glass-card rounded-xl p-md">
+                        <div class="flex justify-between items-center mb-md">
+                            <h4 class="font-headline-md text-headline-md text-on-background text-[18px]">Testimonials</h4>
+                            <span class="px-sm py-xs bg-primary/10 text-primary rounded-full text-[10px] font-bold">LATEST</span>
+                        </div>
+                        <div class="p-sm bg-surface-container/50 rounded-lg border border-on-surface/5 italic text-caption text-secondary">
+                            "The focus and luxury here at Laksh Space is unmatched. My team's productivity tripled."
+                            <div class="mt-sm flex items-center gap-sm not-italic">
+                                <div class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-[10px] text-primary font-bold">JS</div>
+                                <span class="font-label-md text-on-surface text-[12px] font-semibold">Jordan S., CEO of Fintech</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Lead Detail Drawer -->
+    <div class="fixed inset-y-0 right-0 w-full md:w-[480px] glass-card z-[120] translate-x-full transition-transform duration-500 ease-in-out flex flex-col shadow-2xl border-l border-on-surface/10" id="lead-drawer">
+        <div class="p-lg border-b border-on-surface/5 flex justify-between items-center bg-white/50 backdrop-blur-md">
+            <h3 class="font-headline-md text-headline-md text-on-background">Lead Details</h3>
+            <button class="material-symbols-outlined text-secondary hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container" onclick="hideLeadDetails()">close</button>
+        </div>
+        <div class="p-lg flex-grow overflow-y-auto space-y-lg bg-white/40">
+            <div class="flex flex-col items-center text-center space-y-md">
+                <div class="w-24 h-24 rounded-full bg-primary/5 border border-primary/20 flex items-center justify-center text-primary font-black text-[32px] shadow-sm" id="detail-initials">AC</div>
+                <div>
+                    <h4 class="font-headline-md text-headline-md text-on-background" id="detail-name">Alex Chen</h4>
+                    <p class="font-body-md text-body-md text-secondary" id="detail-time">Inbound Inquiry • 2 hours ago</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 gap-md">
+                <div class="p-md bg-white border border-on-surface/5 rounded-xl">
+                    <p class="font-label-md text-caption text-secondary mb-xs">Requirement Type</p>
+                    <p class="font-body-lg text-body-md font-semibold text-on-background" id="detail-requirement">Dedicated Desk</p>
+                </div>
+                <div class="p-md bg-white border border-on-surface/5 rounded-xl">
+                    <p class="font-label-md text-caption text-secondary mb-xs">Company / Org</p>
+                    <p class="font-body-lg text-body-md font-semibold text-on-background" id="detail-company">InnoTech Solutions</p>
+                </div>
+                <div class="p-md bg-white border border-on-surface/5 rounded-xl">
+                    <p class="font-label-md text-caption text-secondary mb-xs">Contact Details</p>
+                    <p class="font-body-lg text-body-md text-on-background" id="detail-phone">+91 734 882 4242</p>
+                    <p class="font-body-lg text-body-md text-on-background" id="detail-email">alex@innotech.com</p>
+                </div>
+                <div class="p-md bg-white border border-on-surface/5 rounded-xl">
+                    <p class="font-label-md text-caption text-secondary mb-xs">Personal Note / Message</p>
+                    <p class="font-body-md text-body-md text-secondary italic leading-relaxed" id="detail-message">Looking for a dedicated desk space with Gbps link.</p>
+                </div>
+                <div class="p-md bg-white border border-on-surface/5 rounded-xl">
+                    <p class="font-label-md text-caption text-secondary mb-xs">Current Status</p>
+                    <div class="flex items-center gap-sm mt-1">
+                        <span class="px-sm py-xs bg-primary/10 text-primary rounded-full text-caption font-bold" id="detail-status">NEW</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="space-y-md pt-lg border-t border-on-surface/5 flex gap-sm">
+                <button onclick="triggerAction('Proposal Sent to ' + document.getElementById('detail-name').innerText)" class="flex-1 bg-primary text-white py-md rounded-xl font-label-md text-label-md hover:scale-[1.02] active:scale-95 transition-all text-center shadow-lg shadow-primary/20">
+                    Send Proposal
+                </button>
+                <button onclick="triggerAction('Viewing scheduled for ' + document.getElementById('detail-name').innerText)" class="flex-1 border border-outline/20 text-on-surface bg-white py-md rounded-xl font-label-md text-label-md hover:bg-surface-container transition-all text-center">
+                    Schedule Tour
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripting for Dynamic Logic -->
+    <script>
+        // Default list of high-fidelity leads to show initially
+        const defaultLeads = [
+            { name: 'Alex Chen', company: 'InnoTech Solutions', phone: '+91 734 882 4242', email: 'alex@innotech.com', requirement: 'Dedicated Desk', message: 'Looking for a dedicated desk with high-speed fiber internet and premium lounge access.', status: 'NEW', time: '2 hours ago' },
+            { name: 'Sarah Wright', company: 'Freelancer', phone: '+91 98888 77777', email: 'sarah.w@gmail.com', requirement: 'Virtual Office', message: 'Need immediate virtual office registration and documentation support for GST registration.', status: 'FOLLOW UP', time: '5 hours ago' },
+            { name: 'Mehta & Co', company: 'Legal Associates', phone: '+91 95555 12345', email: 'contact@mehtalaw.in', requirement: 'Private Managed Office', message: 'We are expanding our core law firm. Need a 2-seater private cabin space starting next month.', status: 'CONTACTED', time: '1 day ago' }
+        ];
+
+        // Default Prices
+        const defaultPrices = {
+            hot: '₹499/day',
+            ded: '₹16,999/mo',
+            priv: '₹8,999/mo'
+        };
+
+        // Initialize lists
+        let leadsList = [];
+        let priceSettings = {};
+
+        window.onload = function() {
+            // Load prices
+            const savedPrices = localStorage.getItem('laksh_prices');
+            if (savedPrices) {
+                priceSettings = JSON.parse(savedPrices);
+            } else {
+                priceSettings = defaultPrices;
+                localStorage.setItem('laksh_prices', JSON.stringify(priceSettings));
+            }
+            displayPrices();
+
+            // Load leads
+            const savedLeads = localStorage.getItem('laksh_leads');
+            if (savedLeads) {
+                leadsList = JSON.parse(savedLeads);
+            } else {
+                leadsList = defaultLeads;
+                localStorage.setItem('laksh_leads', JSON.stringify(leadsList));
+            }
+            renderLeadsTable();
+        };
+
+        // Render Table Rows dynamically
+        function renderLeadsTable() {
+            const tbody = document.getElementById('leads-table-body');
+            tbody.innerHTML = '';
+
+            // Metric
+            document.getElementById('metric-leads').innerText = leadsList.length;
+            document.getElementById('total-leads-span').innerText = `${leadsList.length} pipeline leads`;
+
+            if (leadsList.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="4" class="p-md text-center text-secondary font-body-md py-lg">
+                            <span class="material-symbols-outlined text-[48px] text-gray-300 block mb-sm">inbox</span>
+                            No leads currently in the pipeline.
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+
+            leadsList.forEach((lead, idx) => {
+                const initials = lead.name.split(' ').map(n => n[0]).join('').substring(0,2).toUpperCase();
+                
+                // Status Color classes
+                let statusClass = 'bg-primary/15 text-primary';
+                if (lead.status === 'CONTACTED') statusClass = 'bg-secondary-container text-on-secondary-container';
+                if (lead.status === 'FOLLOW UP') statusClass = 'bg-tertiary-container/20 text-on-tertiary-fixed-variant';
+
+                const tr = document.createElement('tr');
+                tr.className = 'hover:bg-surface-container/20 cursor-pointer transition-colors border-b border-on-surface/5 last:border-0';
+                tr.onclick = function(e) {
+                    // Prevent row click if delete button was clicked
+                    if (e.target.closest('.delete-lead-btn')) return;
+                    showLeadDetails(idx);
+                };
+
+                tr.innerHTML = `
+                    <td class="p-md">
+                        <div class="flex items-center gap-sm">
+                            <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-caption">${initials}</div>
+                            <div>
+                                <span class="font-body-md text-body-md font-semibold text-on-background block">${lead.name}</span>
+                                <span class="font-caption text-caption text-secondary block">${lead.company}</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="p-md font-body-md text-body-md text-secondary">${lead.requirement}</td>
+                    <td class="p-md">
+                        <span class="px-sm py-xs ${statusClass} rounded-full text-caption font-bold">${lead.status}</span>
+                    </td>
+                    <td class="p-md text-right">
+                        <div class="flex justify-end gap-sm items-center">
+                            <button class="text-primary hover:underline text-caption font-bold">View Details</button>
+                            <button onclick="deleteLead(${idx})" class="delete-lead-btn p-1 text-red-500 hover:text-red-700 transition-colors flex items-center justify-center hover:bg-red-50 rounded" title="Delete Lead">
+                                <span class="material-symbols-outlined text-[18px]">delete</span>
+                            </button>
+                        </div>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Show Lead Details in Drawer
+        function showLeadDetails(index) {
+            const lead = leadsList[index];
+            const drawer = document.getElementById('lead-drawer');
+            const initials = lead.name.split(' ').map(n => n[0]).join('').substring(0,2).toUpperCase();
+
+            document.getElementById('detail-name').innerText = lead.name;
+            document.getElementById('detail-initials').innerText = initials;
+            document.getElementById('detail-requirement').innerText = lead.requirement;
+            document.getElementById('detail-company').innerText = lead.company;
+            document.getElementById('detail-phone').innerText = lead.phone;
+            document.getElementById('detail-email').innerText = lead.email;
+            document.getElementById('detail-message').innerText = lead.message || 'No message provided';
+            document.getElementById('detail-status').innerText = lead.status;
+            document.getElementById('detail-time').innerText = `Inbound Inquiry • ${lead.time}`;
+
+            // Update status chip style in drawer
+            const statusBadge = document.getElementById('detail-status');
+            statusBadge.className = 'px-sm py-xs rounded-full text-caption font-bold';
+            if (lead.status === 'NEW') {
+                statusBadge.classList.add('bg-primary/10', 'text-primary');
+            } else if (lead.status === 'CONTACTED') {
+                statusBadge.classList.add('bg-secondary-container', 'text-on-secondary-container');
+            } else {
+                statusBadge.classList.add('bg-tertiary-container/20', 'text-on-tertiary-fixed-variant');
+            }
+
+            drawer.classList.remove('translate-x-full');
+        }
+
+        // Hide Lead Details Drawer
+        function hideLeadDetails() {
+            const drawer = document.getElementById('lead-drawer');
+            drawer.classList.add('translate-x-full');
+        }
+
+        // Delete a lead
+        function deleteLead(index) {
+            if (confirm(`Are you sure you want to delete lead: ${leadsList[index].name}?`)) {
+                leadsList.splice(index, 1);
+                localStorage.setItem('laksh_leads', JSON.stringify(leadsList));
+                renderLeadsTable();
+                hideLeadDetails();
+                showToast('Lead successfully removed');
+            }
+        }
+
+        // Clear all leads
+        function clearAllLeads() {
+            if (confirm('Are you sure you want to clear ALL workspace leads?')) {
+                leadsList = [];
+                localStorage.setItem('laksh_leads', JSON.stringify(leadsList));
+                renderLeadsTable();
+                hideLeadDetails();
+                showToast('All leads cleared');
+            }
+        }
+
+        // Display prices
+        function displayPrices() {
+            document.getElementById('price-val-hot').innerText = priceSettings.hot;
+            document.getElementById('price-val-ded').innerText = priceSettings.ded;
+            document.getElementById('price-val-priv').innerText = priceSettings.priv;
+
+            // Update form fields
+            document.getElementById('edit-hot').value = priceSettings.hot;
+            document.getElementById('edit-ded').value = priceSettings.ded;
+            document.getElementById('edit-priv').value = priceSettings.priv;
+        }
+
+        // Toggle Price Edit Panel
+        function togglePriceEdit() {
+            const listView = document.getElementById('price-list-view');
+            const editView = document.getElementById('price-edit-view');
+            const editBtn = document.getElementById('price-edit-btn');
+
+            if (editView.classList.contains('hidden')) {
+                editView.classList.remove('hidden');
+                listView.classList.add('hidden');
+                editBtn.classList.add('text-primary');
+            } else {
+                editView.classList.add('hidden');
+                listView.classList.remove('hidden');
+                editBtn.classList.remove('text-primary');
+            }
+        }
+
+        // Save new prices
+        function savePrices(event) {
+            event.preventDefault();
+            priceSettings.hot = document.getElementById('edit-hot').value;
+            priceSettings.ded = document.getElementById('edit-ded').value;
+            priceSettings.priv = document.getElementById('edit-priv').value;
+
+            localStorage.setItem('laksh_prices', JSON.stringify(priceSettings));
+            displayPrices();
+            togglePriceEdit();
+            showToast('Workspace plan prices updated successfully');
+        }
+
+        // Trigger action (simulation)
+        function triggerAction(actionText) {
+            showToast(actionText);
+            hideLeadDetails();
+        }
+
+        // Toast notification system
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastText = document.getElementById('toast-text');
+            
+            toastText.innerText = message;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.remove('opacity-0');
+                toast.classList.add('opacity-100');
+            }, 50);
+
+            setTimeout(() => {
+                toast.classList.remove('opacity-100');
+                toast.classList.add('opacity-0');
+                setTimeout(() => {
+                    toast.classList.add('hidden');
+                }, 300);
+            }, 3000);
+        }
+
+        // Sidebar toggle
+        function toggleSidebar() {
+            const sideNav = document.getElementById('side-nav');
+            sideNav.classList.toggle('-translate-x-full');
+        }
+
+        // Export CSV logic
+        function exportCSV() {
+            if (leadsList.length === 0) {
+                showToast('No leads available to export');
+                return;
+            }
+
+            let csvContent = "data:text/csv;charset=utf-8,";
+            csvContent += "Name,Company,Phone,Email,Requirement,Status,Message\n";
+            
+            leadsList.forEach(lead => {
+                const row = `"${lead.name}","${lead.company}","${lead.phone}","${lead.email}","${lead.requirement}","${lead.status}","${lead.message || ''}"`;
+                csvContent += row + "\n";
+            });
+
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", `laksh_space_leads_${new Date().toISOString().slice(0,10)}.csv`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            showToast('CSV export downloaded');
+        }
+
+        // Download Report logic
+        function downloadReport() {
+            showToast('Preparing PDF Report... Download will begin shortly');
+            setTimeout(() => {
+                window.print();
+            }, 1000);
+        }
+
+        // Close drawer on click outside
+        document.addEventListener('click', (e) => {
+            const drawer = document.getElementById('lead-drawer');
+            const sideNav = document.getElementById('side-nav');
+            const menuBtn = document.querySelector('header button');
+            const tableRows = document.querySelectorAll('tbody tr');
+            
+            let isRowClick = false;
+            tableRows.forEach(row => { if(row.contains(e.target)) isRowClick = true; });
+
+            if (drawer && !drawer.contains(e.target) && !isRowClick && !e.target.closest('.delete-lead-btn')) {
+                hideLeadDetails();
+            }
+
+            // Close mobile side nav on click outside
+            if (sideNav && !sideNav.contains(e.target) && menuBtn && !menuBtn.contains(e.target) && !sideNav.classList.contains('-translate-x-full')) {
+                sideNav.classList.add('-translate-x-full');
+            }
+        });
+    </script>
+</body>
+</html>

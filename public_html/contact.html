@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta name="theme-color" content="#e30613"/>
+    <meta name="description" content="Get in touch with Laksh Space to book your premium private cabin office, coworking space, or virtual office in RT Nagar, Bangalore."/>
+    <title>Contact Us | Laksh Space – Premium Coworking & Private Office Cabins</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "background": "#f8f9ff",
+                "on-tertiary-fixed-variant": "#005236",
+                "on-surface-variant": "#5e3f3b",
+                "on-background": "#0b1c30",
+                "on-secondary-fixed-variant": "#404758",
+                "on-primary-fixed-variant": "#930007",
+                "on-error": "#ffffff",
+                "surface-container-low": "#eff4ff",
+                "surface-variant": "#d3e4fe",
+                "on-primary": "#ffffff",
+                "surface-bright": "#f8f9ff",
+                "surface-container": "#e5eeff",
+                "secondary-container": "#d9dff5",
+                "inverse-surface": "#213145",
+                "on-secondary": "#ffffff",
+                "error-container": "#ffdad6",
+                "primary": "#b5000b",
+                "on-tertiary-fixed": "#002113",
+                "primary-fixed-dim": "#ffb4aa",
+                "inverse-primary": "#ffb4aa",
+                "tertiary-fixed": "#6ffbbe",
+                "on-primary-fixed": "#410001",
+                "secondary-fixed-dim": "#c0c6db",
+                "secondary-fixed": "#dce2f7",
+                "on-surface": "#0b1c30",
+                "surface": "#f8f9ff",
+                "surface-container-highest": "#d3e4fe",
+                "on-secondary-container": "#5c6274",
+                "error": "#ba1a1a",
+                "outline-variant": "#e9bcb6",
+                "on-tertiary": "#ffffff",
+                "on-secondary-fixed": "#141b2b",
+                "tertiary-fixed-dim": "#4edea3",
+                "surface-tint": "#c0000c",
+                "surface-container-high": "#dce9ff",
+                "surface-dim": "#cbdbf5",
+                "primary-fixed": "#ffdad5",
+                "on-primary-container": "#fff5f3",
+                "tertiary-container": "#008158",
+                "surface-container-lowest": "#ffffff",
+                "inverse-on-surface": "#eaf1ff",
+                "outline": "#936e69",
+                "tertiary": "#006545",
+                "secondary": "#575e70",
+                "primary-container": "#e30613",
+                "on-tertiary-container": "#dbffe9",
+                "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.5rem",
+                "lg": "0.75rem",
+                "xl": "1rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "margin-mobile": "16px",
+                "gutter": "24px",
+                "md": "24px",
+                "lg": "48px",
+                "sm": "12px",
+                "base": "8px",
+                "xl": "80px",
+                "container-max": "1280px",
+                "xs": "4px"
+            },
+            "fontFamily": {
+                "headline-lg-mobile": ["Inter"],
+                "headline-lg": ["Inter"],
+                "label-md": ["Inter"],
+                "body-lg": ["Inter"],
+                "display-lg": ["Inter"],
+                "headline-md": ["Inter"],
+                "body-md": ["Inter"],
+                "caption": ["Inter"]
+            },
+            "fontSize": {
+                "headline-lg-mobile": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                "display-lg": ["clamp(48px, 5vw, 72px)", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                "caption": ["12px", {"lineHeight": "16px", "letterSpacing": "0", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+    
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+        .deep-shadow {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        .card-shadow {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-shadow:hover {
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12), 0 8px 24px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #b5000b 0%, #e30613 100%);
+            box-shadow: 0 4px 20px rgba(181, 0, 11, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(181, 0, 11, 0.4);
+        }
+        .premium-input:focus {
+            border-color: #b5000b;
+            box-shadow: 0 0 0 4px rgba(181, 0, 11, 0.1);
+        }
+        .faq-accordion[open] .faq-icon {
+            transform: rotate(180deg);
+        }
+        .shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-[100] bg-white/90 backdrop-blur-xl border-b border-on-surface/10 shadow-lg h-20 transition-all duration-300">
+        <div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-lg h-full">
+            <a class="flex items-center gap-xs hover:opacity-90 transition-opacity" href="index.html">
+                <span class="text-2xl md:text-3xl font-extrabold tracking-tight"><span class="text-on-background">Laksh</span> <span class="text-primary">Space</span></span>
+            </a>
+            
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center gap-lg">
+                <a class="nav-link text-secondary hover:text-primary transition-colors font-body-md text-body-md" href="catalog.html">Office Space</a>
+                <a class="nav-link text-secondary hover:text-primary transition-colors font-body-md text-body-md" href="catalog.html">Coworking</a>
+                <a class="nav-link text-secondary hover:text-primary transition-colors font-body-md text-body-md" href="catalog.html">Virtual Office</a>
+                <a class="nav-link text-secondary hover:text-primary transition-colors font-body-md text-body-md" href="catalog.html">Meeting Rooms</a>
+            </div>
+            
+            <div class="flex items-center gap-md">
+                <a href="https://wa.me/917348824242" target="_blank" class="hidden md:flex items-center gap-xs text-secondary hover:text-primary transition-colors group">
+                    <span class="material-symbols-outlined group-hover:scale-110 transition-transform">call</span>
+                    <span class="font-label-md text-label-md">WhatsApp</span>
+                </a>
+                <a href="contact.html" class="btn-primary text-on-primary px-md py-sm rounded-xl font-label-md text-label-md text-center">Book Tour</a>
+                <button class="md:hidden flex items-center hover:bg-surface-container p-2 rounded-lg transition-colors" onclick="toggleMobileMenu()">
+                    <span class="material-symbols-outlined text-on-surface text-2xl" id="menu-icon">menu</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Dropdown Nav -->
+        <div class="hidden md:hidden w-full bg-white/95 backdrop-blur-xl border-b border-on-surface/10 px-margin-mobile py-md flex flex-col gap-sm shadow-lg" id="mobile-menu">
+            <a class="text-secondary hover:text-primary py-3 transition-colors font-body-md text-body-md border-b border-on-surface/5 hover:bg-surface-container px-3 rounded-lg" href="catalog.html">Office Space</a>
+            <a class="text-secondary hover:text-primary py-3 transition-colors font-body-md text-body-md border-b border-on-surface/5 hover:bg-surface-container px-3 rounded-lg" href="catalog.html">Coworking</a>
+            <a class="text-secondary hover:text-primary py-3 transition-colors font-body-md text-body-md border-b border-on-surface/5 hover:bg-surface-container px-3 rounded-lg" href="catalog.html">Virtual Office</a>
+            <a class="text-secondary hover:text-primary py-3 transition-colors font-body-md text-body-md border-b border-on-surface/5 hover:bg-surface-container px-3 rounded-lg" href="catalog.html">Meeting Rooms</a>
+            <a class="text-secondary hover:text-primary py-3 transition-colors font-body-md text-body-md flex items-center gap-sm hover:bg-surface-container px-3 rounded-lg" href="https://wa.me/917348824242" target="_blank">
+                <span class="material-symbols-outlined text-[20px]">call</span> WhatsApp Support
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-xl">
+        <div class="max-w-container-max mx-auto px-margin-mobile md:px-lg">
+            
+            <!-- Hero Header -->
+            <div class="mb-lg text-center md:text-left">
+                <span class="text-primary font-label-md tracking-widest uppercase mb-4 block">Get In Touch</span>
+                <h1 class="font-display-lg text-display-lg text-on-background mb-base">Connect With Excellence</h1>
+                <p class="font-body-lg text-body-lg text-secondary max-w-2xl">Tailored workspace solutions for visionaries. Let us curate your professional environment at Laksh Space.</p>
+            </div>
+            
+            <!-- Split Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+                
+                <!-- Left: Location Info -->
+                <div class="lg:col-span-5 flex flex-col gap-gutter">
+                    <div class="glass-card rounded-2xl p-md md:p-lg flex-grow space-y-6">
+                        <h2 class="font-headline-md text-headline-md mb-md">Visit Our Flagship Location</h2>
+                        
+                        <div class="space-y-6">
+                            <div class="flex gap-4">
+                                <div class="bg-primary/10 p-3 rounded-lg h-fit flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-primary">location_on</span>
+                                </div>
+                                <div>
+                                    <p class="font-label-md text-on-surface">Our Address</p>
+                                    <p class="text-secondary">No 33, CBI Main Rd, RT Nagar, Bengaluru, Karnataka 560032</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex gap-4">
+                                <div class="bg-primary/10 p-3 rounded-lg h-fit flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-primary">schedule</span>
+                                </div>
+                                <div>
+                                    <p class="font-label-md text-on-surface">Working Hours</p>
+                                    <p class="text-secondary">Mon - Sat: 08:00 AM - 09:00 PM</p>
+                                    <p class="text-secondary">Sunday: By Appointment Only</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex gap-4">
+                                <div class="bg-primary/10 p-3 rounded-lg h-fit flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-primary">contact_support</span>
+                                </div>
+                                <div>
+                                    <p class="font-label-md text-on-surface">Quick Contact</p>
+                                    <p class="text-secondary">+91 734 882 4242</p>
+                                    <p class="text-secondary">concierge@lakshspace.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Interactive Map Placeholder -->
+                        <div class="relative w-full aspect-video rounded-xl overflow-hidden group border border-on-surface/5">
+                            <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.3!2d77.5838!3d13.0173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae17000000000%3A0x0!2sNo%2033%2C%20CBI%20Main%20Rd%2C%20RT%20Nagar%2C%20Bengaluru!5e0!3m2!1sen!2sin!4v1700000000000" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Laksh Space Location Map"></iframe>
+                            <div class="absolute bottom-4 left-4 z-10">
+                                <a href="https://maps.app.goo.gl/Qf95h2m2Bw2Nfm54A" target="_blank" class="bg-white text-on-background px-6 py-2 rounded-full font-label-md flex items-center gap-2 hover:bg-primary hover:text-white transition-all shadow-lg">
+                                    <span class="material-symbols-outlined text-[20px]">directions</span>
+                                    Get Directions
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right: Quick Connect Card -->
+                <div class="lg:col-span-7">
+                    <div class="glass-card rounded-2xl p-md md:p-lg h-full flex flex-col justify-center items-center text-center space-y-8 min-h-[450px]">
+                        <div class="space-y-4">
+                            <span class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">Instant Booking & Enquiry</span>
+                            <h2 class="font-headline-md text-headline-md text-3xl">Connect with Us Instantly</h2>
+                            <p class="text-secondary max-w-md mx-auto text-body-md leading-relaxed">Skip the forms. Tap below to chat directly with our workspace specialist on WhatsApp or give us a call to book your workspace tour.</p>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 w-full max-w-md justify-center">
+                            <a href="https://wa.me/917348824242?text=Hi%20Laksh%20Space%2C%20I%20am%20interested%20in%20booking%20a%20workspace%20tour." target="_blank" class="w-full sm:w-auto bg-[#25D366] text-white hover:bg-[#20ba5a] px-8 py-4 rounded-2xl font-headline-md flex items-center justify-center gap-3 transition-all shadow-lg hover:-translate-y-0.5">
+                                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.835-4.577c1.62.962 3.41 1.467 5.24 1.468h.005c5.485 0 9.948-4.461 9.95-9.95.002-2.66-1.033-5.159-2.908-7.038C17.299 2.025 14.805 1 12.16 1 6.672 1 2.21 5.461 2.208 10.95c-.001 1.882.5 3.719 1.452 5.32l-.979 3.57L6.892 19.42zM17.13 14.51c-.274-.137-1.62-.8-1.87-.892-.252-.093-.437-.137-.62.137-.183.275-.71.892-.87 1.075-.16.183-.32.206-.593.07-2.618-1.309-4.225-3.08-5.068-4.53-.228-.393-.016-.607.198-.821.192-.193.385-.436.578-.654.192-.218.257-.367.385-.615.127-.248.064-.467-.032-.673-.096-.207-.62-1.87-.872-2.476-.252-.61-.505-.526-.69-.536-.178-.009-.382-.01-.587-.01-.205 0-.537.078-.817.384-.282.308-1.077 1.054-1.077 2.57 0 1.517 1.103 2.983 1.257 3.189.154.205 2.167 3.31 5.25 4.643.733.316 1.305.505 1.75.647.737.234 1.407.2 1.938.12.593-.09 1.822-.745 2.078-1.46.256-.715.256-1.327.18-1.46-.076-.133-.272-.206-.547-.343z"/></svg>
+                                <span>WhatsApp Us</span>
+                            </a>
+                            <a href="tel:+917348824242" class="w-full sm:w-auto bg-primary text-on-primary hover:opacity-90 px-8 py-4 rounded-2xl font-headline-md flex items-center justify-center gap-3 transition-all shadow-lg hover:-translate-y-0.5">
+                                <span class="material-symbols-outlined">call</span>
+                                <span>Call Us Now</span>
+                            </a>
+                        </div>
+                        
+                        <div class="pt-4 border-t border-on-surface/5 w-full text-center">
+                            <p class="text-caption text-secondary">Available 8:00 AM to 9:00 PM (Mon - Sat)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FAQ Section -->
+            <section class="mt-xl">
+                <div class="text-center mb-lg">
+                    <h2 class="font-display-lg text-headline-lg mb-2">Frequently Asked Questions</h2>
+                    <p class="text-secondary">Everything you need to know about Bengaluru's most exclusive workspace.</p>
+                </div>
+                
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <details class="faq-accordion group bg-white border border-on-surface/5 rounded-xl overflow-hidden transition-all duration-300">
+                        <summary class="flex justify-between items-center p-md cursor-pointer list-none font-headline-md text-body-lg hover:bg-surface-container-low transition-colors select-none">
+                            What office sizes do you offer?
+                            <span class="material-symbols-outlined faq-icon transition-transform duration-300">expand_more</span>
+                        </summary>
+                        <div class="p-md pt-0 text-secondary leading-relaxed">
+                            We offer a diverse range of spaces from 2-person private suites to 50-person managed enterprise floors. Each space is customizable to reflect your brand's identity and operational needs.
+                        </div>
+                    </details>
+                    
+                    <details class="faq-accordion group bg-white border border-on-surface/5 rounded-xl overflow-hidden transition-all duration-300">
+                        <summary class="flex justify-between items-center p-md cursor-pointer list-none font-headline-md text-body-lg hover:bg-surface-container-low transition-colors select-none">
+                            Can I book meeting rooms by the hour?
+                            <span class="material-symbols-outlined faq-icon transition-transform duration-300">expand_more</span>
+                        </summary>
+                        <div class="p-md pt-0 text-secondary leading-relaxed">
+                            Yes, our premium meeting rooms and boardrooms are available for hourly booking via our app. They come fully equipped with high-speed fiber internet, 4K displays, and whiteboards.
+                        </div>
+                    </details>
+                    
+                    <details class="faq-accordion group bg-white border border-on-surface/5 rounded-xl overflow-hidden transition-all duration-300">
+                        <summary class="flex justify-between items-center p-md cursor-pointer list-none font-headline-md text-body-lg hover:bg-surface-container-low transition-colors select-none">
+                            Do you provide GST registration support?
+                            <span class="material-symbols-outlined faq-icon transition-transform duration-300">expand_more</span>
+                        </summary>
+                        <div class="p-md pt-0 text-secondary leading-relaxed">
+                            Our Virtual Office packages include complete documentation for GST registration, company incorporation, and professional mailing address services in prime Bengaluru locations.
+                        </div>
+                    </details>
+                    
+                    <details class="faq-accordion group bg-white border border-on-surface/5 rounded-xl overflow-hidden transition-all duration-300">
+                        <summary class="flex justify-between items-center p-md cursor-pointer list-none font-headline-md text-body-lg hover:bg-surface-container-low transition-colors select-none">
+                            What is included in the membership?
+                            <span class="material-symbols-outlined faq-icon transition-transform duration-300">expand_more</span>
+                        </summary>
+                        <div class="p-md pt-0 text-secondary leading-relaxed">
+                            All memberships include ultra-fast internet, unlimited gourmet coffee, access to break-out zones, daily cleaning, utility management, and invitations to exclusive networking events.
+                        </div>
+                    </details>
+                </div>
+            </section>
+            
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative w-full py-xl bg-inverse-surface border-t border-white/10 mt-20">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto px-margin-mobile md:px-lg">
+            <div class="col-span-1 space-y-md">
+                <a href="index.html" class="inline-block">
+                    <img src="Laksh Space Logo Footer .png" alt="Laksh Space Logo" class="h-12 object-contain">
+                </a>
+                <p class="text-gray-400 font-body-md text-sm">Redefining professional excellence in the heart of Bengaluru. Luxury, community, and performance in one space.</p>
+            </div>
+            <div class="col-span-1">
+                <h6 class="text-white font-bold mb-md uppercase tracking-wider text-caption text-xs">Quick Links</h6>
+                <ul class="space-y-sm">
+                    <li><a class="text-gray-400 hover:text-white transition-colors hover:underline decoration-primary underline-offset-4 font-body-md text-sm" href="catalog.html">Office Space</a></li>
+                    <li><a class="text-gray-400 hover:text-white transition-colors hover:underline decoration-primary underline-offset-4 font-body-md text-sm" href="catalog.html">Coworking</a></li>
+                    <li><a class="text-gray-400 hover:text-white transition-colors hover:underline decoration-primary underline-offset-4 font-body-md text-sm" href="catalog.html">Virtual Office</a></li>
+                    <li><a class="text-gray-400 hover:text-white transition-colors hover:underline decoration-primary underline-offset-4 font-body-md text-sm" href="catalog.html">Meeting Rooms</a></li>
+                </ul>
+            </div>
+            <div class="col-span-1">
+                <h6 class="text-white font-bold mb-md uppercase tracking-wider text-caption text-xs">Navigation</h6>
+                <ul class="space-y-sm">
+                    <li><a class="text-gray-400 hover:text-white transition-colors hover:underline decoration-primary underline-offset-4 font-body-md text-sm" href="catalog.html">Locations</a></li>
+                    <li><a class="text-gray-400 hover:text-white transition-colors hover:underline decoration-primary underline-offset-4 font-body-md text-sm" href="contact.html">Contact Us</a></li>
+                    <li><a class="text-gray-400 hover:text-white transition-colors hover:underline decoration-primary underline-offset-4 font-body-md text-sm" href="admin.html">Admin Dashboard</a></li>
+                </ul>
+            </div>
+            <div class="col-span-1">
+                <h6 class="text-white font-bold mb-md uppercase tracking-wider text-caption text-xs">Connect</h6>
+                <div class="flex gap-md mb-md">
+                    <a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary transition-colors" href="https://wa.me/917348824242" target="_blank">
+                        <span class="material-symbols-outlined">public</span>
+                    </a>
+                    <a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary transition-colors" href="mailto:concierge@lakshspace.com">
+                        <span class="material-symbols-outlined">mail</span>
+                    </a>
+                </div>
+                <p class="text-gray-400 text-xs">No 33, CBI Main Rd, RT Nagar, Bangalore</p>
+            </div>
+        </div>
+        <div class="max-w-container-max mx-auto mt-xl pt-lg border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-md">
+            <p class="text-gray-400 text-xs">© 2026 Laksh Space. Luxury Coworking Excellence. All Rights Reserved.</p>
+            <div class="flex gap-lg">
+                <a class="text-gray-400 hover:text-white text-xs" href="#">Privacy Policy</a>
+                <a class="text-gray-400 hover:text-white text-xs" href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.innerText = 'close';
+            } else {
+                menu.classList.add('hidden');
+                icon.innerText = 'menu';
+            }
+        }
+    </script>
+</body>
+</html>

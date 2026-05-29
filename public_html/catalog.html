@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta name="description" content="Explore all workspace options at Laksh Space – private office cabins, coworking desks, meeting rooms, and virtual offices in RT Nagar, Bangalore."/>
+    <title>Workspaces | Laksh Space – Private Offices & Coworking in RT Nagar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "background": "#f8f9ff", "on-tertiary-fixed-variant": "#005236",
+                "on-surface-variant": "#5e3f3b", "on-background": "#0b1c30",
+                "on-secondary-fixed-variant": "#404758", "on-primary-fixed-variant": "#930007",
+                "on-error": "#ffffff", "surface-container-low": "#eff4ff",
+                "surface-variant": "#d3e4fe", "on-primary": "#ffffff",
+                "surface-bright": "#f8f9ff", "surface-container": "#e5eeff",
+                "secondary-container": "#d9dff5", "inverse-surface": "#213145",
+                "on-secondary": "#ffffff", "error-container": "#ffdad6",
+                "primary": "#b5000b", "on-tertiary-fixed": "#002113",
+                "primary-fixed-dim": "#ffb4aa", "inverse-primary": "#ffb4aa",
+                "tertiary-fixed": "#6ffbbe", "on-primary-fixed": "#410001",
+                "secondary-fixed-dim": "#c0c6db", "secondary-fixed": "#dce2f7",
+                "on-surface": "#0b1c30", "surface": "#f8f9ff",
+                "surface-container-highest": "#d3e4fe", "on-secondary-container": "#5c6274",
+                "error": "#ba1a1a", "outline-variant": "#e9bcb6", "on-tertiary": "#ffffff",
+                "on-secondary-fixed": "#141b2b", "tertiary-fixed-dim": "#4edea3",
+                "surface-tint": "#c0000c", "surface-container-high": "#dce9ff",
+                "surface-dim": "#cbdbf5", "primary-fixed": "#ffdad5",
+                "on-primary-container": "#fff5f3", "tertiary-container": "#008158",
+                "surface-container-lowest": "#ffffff", "inverse-on-surface": "#eaf1ff",
+                "outline": "#936e69", "tertiary": "#006545", "secondary": "#575e70",
+                "primary-container": "#e30613", "on-tertiary-container": "#dbffe9",
+                "on-error-container": "#93000a"
+            },
+            "borderRadius": { "DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px" },
+            "spacing": {
+                "margin-mobile": "16px", "gutter": "24px", "md": "24px", "lg": "48px",
+                "sm": "12px", "base": "8px", "xl": "80px", "container-max": "1280px", "xs": "4px"
+            },
+            "fontFamily": {
+                "headline-lg": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"],
+                "display-lg": ["Inter"], "headline-md": ["Inter"], "body-md": ["Inter"], "caption": ["Inter"]
+            },
+            "fontSize": {
+                "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                "display-lg": ["clamp(40px, 4vw, 56px)", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                "caption": ["12px", {"lineHeight": "16px", "letterSpacing": "0", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255,255,255,0.75);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(15,23,42,0.06);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 20px 25px -5px rgba(0,0,0,0.1);
+            transition: all 200ms cubic-bezier(0.4,0,0.2,1);
+        }
+        .glass-card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 12px 20px -3px rgba(0,0,0,0.12), 0 28px 35px -5px rgba(0,0,0,0.16);
+        }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        input[type=range]::-webkit-slider-thumb { background: #b5000b; }
+        input[type=range]::-webkit-slider-runnable-track { background: #e5eeff; }
+        .card-hidden { display: none; }
+    </style>
+</head>
+<body class="bg-background text-on-background overflow-x-hidden">
+
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-[100] bg-white/80 backdrop-blur-xl border-b border-on-surface/5 shadow-sm">
+        <div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-lg h-20">
+            <a class="flex items-center gap-xs" href="index.html">
+                <span class="text-2xl md:text-3xl font-extrabold tracking-tight"><span class="text-on-background">Laksh</span> <span class="text-primary">Space</span></span>
+            </a>
+            <div class="hidden md:flex items-center gap-lg">
+                <a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1" href="catalog.html">Office Space</a>
+                <a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors" href="catalog.html">Coworking</a>
+                <a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors" href="catalog.html">Virtual Office</a>
+                <a class="font-body-md text-body-md text-secondary hover:text-primary transition-colors" href="catalog.html">Meeting Rooms</a>
+            </div>
+            <div class="flex items-center gap-md">
+                <a href="https://wa.me/917348824242" target="_blank" class="hidden sm:flex items-center gap-xs text-secondary hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined">call</span>
+                    <span class="font-label-md text-label-md">WhatsApp</span>
+                </a>
+                <a href="contact.html" class="bg-primary text-on-primary px-md py-sm rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity active:scale-95">Book Tour</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-xl max-w-container-max mx-auto px-margin-mobile md:px-lg">
+
+        <!-- Header & Filter Chips -->
+        <header class="py-lg">
+            <h1 class="font-display-lg text-display-lg mb-md text-center md:text-left">Explore Our <span class="text-primary">Spaces</span></h1>
+            <div class="flex flex-wrap gap-sm justify-center md:justify-start" id="chip-filters">
+                <button class="px-md py-base rounded-full bg-primary text-white font-label-md text-label-md shadow-lg transition-all chip-btn active" data-filter="all">All Spaces</button>
+                <button class="px-md py-base rounded-full bg-white border border-outline-variant text-on-surface hover:bg-surface-container transition-all font-label-md text-label-md chip-btn" data-filter="office">Private Office</button>
+                <button class="px-md py-base rounded-full bg-white border border-outline-variant text-on-surface hover:bg-surface-container transition-all font-label-md text-label-md chip-btn" data-filter="coworking">Coworking</button>
+                <button class="px-md py-base rounded-full bg-white border border-outline-variant text-on-surface hover:bg-surface-container transition-all font-label-md text-label-md chip-btn" data-filter="meeting">Meeting Room</button>
+                <button class="px-md py-base rounded-full bg-white border border-outline-variant text-on-surface hover:bg-surface-container transition-all font-label-md text-label-md chip-btn" data-filter="virtual">Virtual Office</button>
+            </div>
+        </header>
+
+        <div>
+            <!-- Product Grid -->
+            <div id="product-grid">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+
+                    <!-- Card 1: Single Seater Cabin -->
+                    <div class="glass-card rounded-2xl overflow-hidden group workspace-card" data-category="office">
+                        <div class="h-56 overflow-hidden relative">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Single Seater Private Cabin" src="images-optimized/1 SEAT/IMG_6808.webp"/>
+                            <div class="absolute top-md right-md bg-tertiary text-white font-label-md text-label-md px-sm py-xs rounded-full flex items-center gap-xs text-xs">
+                                <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span> Available Now
+                            </div>
+                        </div>
+                        <div class="p-md">
+                            <div class="flex justify-between items-start mb-sm">
+                                <div>
+                                    <h3 class="font-headline-md text-headline-md">Single Seater Cabin</h3>
+                                    <p class="font-caption text-caption text-secondary">Private · Soundproof · RT Nagar</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-caption text-caption text-secondary">Starting at</p>
+                                    <p class="font-headline-md text-headline-md text-primary">₹8,999<span class="text-caption text-secondary font-normal">/mo</span></p>
+                                </div>
+                            </div>
+                            <div class="flex gap-md py-sm border-y border-outline-variant mb-md">
+                                <div class="flex items-center gap-xs text-secondary">
+                                    <span class="material-symbols-outlined text-[18px]">person</span>
+                                    <span class="font-label-md text-label-md">1 Person</span>
+                                </div>
+                                <div class="flex items-center gap-xs text-secondary">
+                                    <span class="material-symbols-outlined text-[18px]">wifi</span>
+                                    <span class="font-label-md text-label-md">Gbps Link</span>
+                                </div>
+                                <div class="flex items-center gap-xs text-secondary">
+                                    <span class="material-symbols-outlined text-[18px]">lock</span>
+                                    <span class="font-label-md text-label-md">Biometric</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-sm">
+                                <a href="contact.html" class="flex-1 bg-primary text-white py-sm rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity text-center">Book Now</a>
+                                <a href="contact.html" class="px-md py-sm rounded-xl border border-outline-variant font-label-md text-label-md hover:bg-surface-container transition-all text-center">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: 2 Seater Cabin -->
+                    <div class="glass-card rounded-2xl overflow-hidden group workspace-card border-2 border-primary/30" data-category="office">
+                        <div class="h-56 overflow-hidden relative">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="2 Seater Private Cabin" src="images-optimized/2 SEAT/IMG_6813.webp"/>
+                            <div class="absolute top-md left-md bg-primary text-white font-label-md text-label-md px-sm py-xs rounded-full text-xs">Most Popular</div>
+                        </div>
+                        <div class="p-md">
+                            <div class="flex justify-between items-start mb-sm">
+                                <div>
+                                    <h3 class="font-headline-md text-headline-md">2 Seater Cabin</h3>
+                                    <p class="font-caption text-caption text-secondary">Exclusive · Managed · RT Nagar</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-caption text-caption text-secondary">Starting at</p>
+                                    <p class="font-headline-md text-headline-md text-primary">₹16,999<span class="text-caption text-secondary font-normal">/mo</span></p>
+                                </div>
+                            </div>
+                            <div class="flex gap-md py-sm border-y border-outline-variant mb-md">
+                                <div class="flex items-center gap-xs text-secondary">
+                                    <span class="material-symbols-outlined text-[18px]">group</span>
+                                    <span class="font-label-md text-label-md">2 Persons</span>
+                                </div>
+                                <div class="flex items-center gap-xs text-secondary">
+                                    <span class="material-symbols-outlined text-[18px]">meeting_room</span>
+                                    <span class="font-label-md text-label-md">Meeting Credits</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-sm">
+                                <a href="contact.html" class="flex-1 bg-primary text-white py-sm rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity text-center">Book Now</a>
+                                <a href="contact.html" class="px-md py-sm rounded-xl border border-outline-variant font-label-md text-label-md hover:bg-surface-container transition-all text-center">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: 6 Seater Executive Suite -->
+                    <div class="glass-card rounded-2xl overflow-hidden group workspace-card" data-category="office">
+                        <div class="h-56 overflow-hidden relative">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="6 Seater Executive Suite" src="images-optimized/6 SEAT/IMG_6809.webp"/>
+                        </div>
+                        <div class="p-md">
+                            <div class="flex justify-between items-start mb-sm">
+                                <div>
+                                    <h3 class="font-headline-md text-headline-md">6 Seater Suite</h3>
+                                    <p class="font-caption text-caption text-secondary">Executive · Team Ready · RT Nagar</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-caption text-caption text-secondary">Starting at</p>
+                                    <p class="font-headline-md text-headline-md text-primary">₹41,999<span class="text-caption text-secondary font-normal">/mo</span></p>
+                                </div>
+                            </div>
+                            <div class="flex gap-md py-sm border-y border-outline-variant mb-md">
+                                <div class="flex items-center gap-xs text-secondary">
+                                    <span class="material-symbols-outlined text-[18px]">groups</span>
+                                    <span class="font-label-md text-label-md">Up to 6 Persons</span>
+                                </div>
+                                <div class="flex items-center gap-xs text-secondary">
+                                    <span class="material-symbols-outlined text-[18px]">tv</span>
+                                    <span class="font-label-md text-label-md">Smart Display</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-sm">
+                                <a href="contact.html" class="flex-1 bg-primary text-white py-sm rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity text-center">Book Now</a>
+                                <a href="contact.html" class="px-md py-sm rounded-xl border border-outline-variant font-label-md text-label-md hover:bg-surface-container transition-all text-center">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Elite Boardroom -->
+                    <div class="glass-card rounded-2xl overflow-hidden group workspace-card" data-category="meeting">
+                        <div class="h-56 overflow-hidden relative">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Elite Conference Boardroom" src="images-optimized/CONFERENCE/IMG_6850.webp"/>
+                        </div>
+                        <div class="p-md">
+                            <div class="flex justify-between items-start mb-sm">
+                                <div>
+                                    <h3 class="font-headline-md text-headline-md">Elite Boardroom</h3>
+                                    <p class="font-caption text-caption text-secondary">Smart TV · Hourly Booking · RT Nagar</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-caption text-caption text-secondary">Starting at</p>
+                                    <p class="font-headline-md text-headline-md text-primary">₹1,499<span class="text-caption text-secondary font-normal">/hr</span></p>
+                                </div>
+                            </div>
+                            <div class="flex gap-md py-sm border-y border-outline-variant mb-md">
+                                <div class="flex items-center gap-xs text-secondary">
+                                    <span class="material-symbols-outlined text-[18px]">groups</span>
+                                    <span class="font-label-md text-label-md">Up to 12</span>
+                                </div>
+                                <div class="flex items-center gap-xs text-secondary">
+                                    <span class="material-symbols-outlined text-[18px]">tv</span>
+                                    <span class="font-label-md text-label-md">4K Screen + AV</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-sm">
+                                <a href="contact.html" class="flex-1 bg-primary text-white py-sm rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity text-center">Book Now</a>
+                                <a href="contact.html" class="px-md py-sm rounded-xl border border-outline-variant font-label-md text-label-md hover:bg-surface-container transition-all text-center">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Hot Desk / Coworking -->
+                    <div class="glass-card rounded-2xl overflow-hidden group workspace-card" data-category="coworking">
+                        <div class="h-56 overflow-hidden relative">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Hot Desk Coworking Space" src="images-optimized/galery-images/Meeting Room .webp"/>
+                        </div>
+                        <div class="p-md">
+                            <div class="flex justify-between items-start mb-sm">
+                                <div>
+                                    <h3 class="font-headline-md text-headline-md">Hot Desk</h3>
+                                    <p class="font-caption text-caption text-secondary">Flexible · Social · RT Nagar</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-caption text-caption text-secondary">Starting at</p>
+                                    <p class="font-headline-md text-headline-md text-primary">₹499<span class="text-caption text-secondary font-normal">/day</span></p>
+                                </div>
+                            </div>
+                            <div class="flex gap-md py-sm border-y border-outline-variant mb-md">
+                                <div class="flex items-center gap-xs text-secondary">
+                                    <span class="material-symbols-outlined text-[18px]">bolt</span>
+                                    <span class="font-label-md text-label-md">Instant Access</span>
+                                </div>
+                                <div class="flex items-center gap-xs text-secondary">
+                                    <span class="material-symbols-outlined text-[18px]">print</span>
+                                    <span class="font-label-md text-label-md">Free Printing</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-sm">
+                                <a href="contact.html" class="flex-1 bg-primary text-white py-sm rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity text-center">Book Now</a>
+                                <a href="contact.html" class="px-md py-sm rounded-xl border border-outline-variant font-label-md text-label-md hover:bg-surface-container transition-all text-center">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Virtual Office -->
+                    <div class="glass-card rounded-2xl overflow-hidden group workspace-card" data-category="virtual">
+                        <div class="h-56 overflow-hidden relative">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Virtual Office Business Address" src="images-optimized/Virtual Office.webp"/>
+                        </div>
+                        <div class="p-md">
+                            <div class="flex justify-between items-start mb-sm">
+                                <div>
+                                    <h3 class="font-headline-md text-headline-md">Virtual Office</h3>
+                                    <p class="font-caption text-caption text-secondary">GST Reg · Mail Handling · RT Nagar</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="font-caption text-caption text-secondary">Starting at</p>
+                                    <p class="font-headline-md text-headline-md text-primary">₹1,999<span class="text-caption text-secondary font-normal">/mo</span></p>
+                                </div>
+                            </div>
+                            <div class="flex gap-md py-sm border-y border-outline-variant mb-md">
+                                <div class="flex items-center gap-xs text-secondary">
+                                    <span class="material-symbols-outlined text-[18px]">location_on</span>
+                                    <span class="font-label-md text-label-md">Business Address</span>
+                                </div>
+                                <div class="flex items-center gap-xs text-secondary">
+                                    <span class="material-symbols-outlined text-[18px]">forward_to_inbox</span>
+                                    <span class="font-label-md text-label-md">Mail Handling</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-sm">
+                                <a href="contact.html" class="flex-1 bg-primary text-white py-sm rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity text-center">Book Now</a>
+                                <a href="contact.html" class="px-md py-sm rounded-xl border border-outline-variant font-label-md text-label-md hover:bg-surface-container transition-all text-center">Enquire</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- No results state -->
+                <div class="hidden text-center py-xl" id="no-results">
+                    <span class="material-symbols-outlined text-outline text-[64px]">search_off</span>
+                    <p class="text-secondary mt-md">No spaces match your filter. Try adjusting the category above.</p>
+                </div>
+
+                <!-- CTA Load More -->
+                <div class="mt-lg flex justify-center">
+                    <a href="contact.html" class="flex items-center gap-sm px-lg py-sm border border-primary text-primary font-bold rounded-xl hover:bg-primary/5 transition-all">
+                        <span>Request a Custom Space</span>
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative w-full py-xl bg-inverse-surface border-t border-white/10 mt-20">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto px-margin-mobile md:px-lg">
+            <div class="col-span-1 space-y-md">
+                <a href="index.html" class="inline-block">
+                    <img src="Laksh Space Logo Footer .png" alt="Laksh Space Logo" class="h-12 object-contain">
+                </a>
+                <p class="text-gray-400 font-body-md text-sm">Redefining professional excellence in the heart of Bengaluru. Luxury, community, and performance in one space.</p>
+            </div>
+            <div class="col-span-1">
+                <h6 class="text-white font-bold mb-md uppercase tracking-wider text-caption text-xs">Quick Links</h6>
+                <ul class="space-y-sm">
+                    <li><a class="text-gray-400 hover:text-white transition-colors hover:underline decoration-primary underline-offset-4 font-body-md text-sm" href="catalog.html">Office Space</a></li>
+                    <li><a class="text-gray-400 hover:text-white transition-colors hover:underline decoration-primary underline-offset-4 font-body-md text-sm" href="catalog.html">Coworking</a></li>
+                    <li><a class="text-gray-400 hover:text-white transition-colors hover:underline decoration-primary underline-offset-4 font-body-md text-sm" href="catalog.html">Virtual Office</a></li>
+                    <li><a class="text-gray-400 hover:text-white transition-colors hover:underline decoration-primary underline-offset-4 font-body-md text-sm" href="catalog.html">Meeting Rooms</a></li>
+                </ul>
+            </div>
+            <div class="col-span-1">
+                <h6 class="text-white font-bold mb-md uppercase tracking-wider text-caption text-xs">Navigation</h6>
+                <ul class="space-y-sm">
+                    <li><a class="text-gray-400 hover:text-white transition-colors hover:underline decoration-primary underline-offset-4 font-body-md text-sm" href="catalog.html">Locations</a></li>
+                    <li><a class="text-gray-400 hover:text-white transition-colors hover:underline decoration-primary underline-offset-4 font-body-md text-sm" href="contact.html">Contact Us</a></li>
+                    <li><a class="text-gray-400 hover:text-white transition-colors hover:underline decoration-primary underline-offset-4 font-body-md text-sm" href="admin.html">Admin Dashboard</a></li>
+                </ul>
+            </div>
+            <div class="col-span-1">
+                <h6 class="text-white font-bold mb-md uppercase tracking-wider text-caption text-xs">Connect</h6>
+                <div class="flex gap-md mb-md">
+                    <a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary transition-colors" href="https://wa.me/917348824242" target="_blank">
+                        <span class="material-symbols-outlined">public</span>
+                    </a>
+                    <a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary transition-colors" href="mailto:concierge@lakshspace.com">
+                        <span class="material-symbols-outlined">mail</span>
+                    </a>
+                </div>
+                <p class="text-gray-400 text-xs">No 33, CBI Main Rd, RT Nagar, Bangalore</p>
+            </div>
+        </div>
+        <div class="max-w-container-max mx-auto mt-xl pt-lg border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-md">
+            <p class="text-gray-400 text-xs">© 2026 Laksh Space. Luxury Coworking Excellence. All Rights Reserved.</p>
+            <div class="flex gap-lg">
+                <a class="text-gray-400 hover:text-white text-xs" href="#">Privacy Policy</a>
+                <a class="text-gray-400 hover:text-white text-xs" href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Chip filter logic
+        const chipBtns = document.querySelectorAll('.chip-btn');
+        const cards = document.querySelectorAll('.workspace-card');
+        const noResults = document.getElementById('no-results');
+
+        chipBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                chipBtns.forEach(b => {
+                    b.classList.remove('bg-primary', 'text-white', 'shadow-lg');
+                    b.classList.add('bg-white', 'border', 'border-outline-variant', 'text-on-surface');
+                });
+                btn.classList.add('bg-primary', 'text-white', 'shadow-lg');
+                btn.classList.remove('bg-white', 'border', 'border-outline-variant', 'text-on-surface');
+
+                const filter = btn.dataset.filter;
+                let anyVisible = false;
+                cards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = '';
+                        anyVisible = true;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                noResults.classList.toggle('hidden', anyVisible);
+            });
+        });
+
+        // Seat counter
+        function adjustSeat(delta) {
+            const inp = document.getElementById('seat-count');
+            const newVal = Math.max(1, Math.min(50, parseInt(inp.value || 1) + delta));
+            inp.value = newVal;
+        }
+
+        // Nav scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('shadow-md', window.scrollY > 20);
+        });
+    </script>
+</body>
+</html>

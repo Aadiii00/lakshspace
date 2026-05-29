@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "./static/css/main.68d68632.css",
+    "main.js": "./static/js/main.c2958f7e.js",
+    "static/media/EffraVF_Trial_WghtItal.ttf": "./static/media/EffraVF_Trial_WghtItal.ea1de6db5cee1330c5ca.ttf",
+    "index.html": "./index.html",
+    "main.68d68632.css.map": "./static/css/main.68d68632.css.map",
+    "main.c2958f7e.js.map": "./static/js/main.c2958f7e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.68d68632.css",
+    "static/js/main.c2958f7e.js"
+  ]
+}
