@@ -238,6 +238,25 @@
             border-color: rgba(181, 0, 11, 0.2);
             transform: scale(1.02);
         }
+
+        /* Mobile-specific size reductions */
+        @media (max-width: 640px) {
+            .text-display-lg { font-size: 36px !important; line-height: 40px !important; }
+            .text-headline-lg { font-size: 26px !important; line-height: 32px !important; }
+            .text-headline-md { font-size: 18px !important; line-height: 24px !important; }
+            .text-body-lg, .text-body-md { font-size: 14px !important; line-height: 1.5 !important; }
+            .text-label-md, .font-label-md { font-size: 12px !important; }
+
+            .btn-primary { padding-left: 0.75rem !important; padding-right: 0.75rem !important; padding-top: 0.5rem !important; padding-bottom: 0.5rem !important; font-size: 14px !important; }
+            .tab-btn { padding: 0.5rem 0.75rem !important; font-size: 13px !important; }
+
+            .stat-card { padding: 0.5rem !important; border-radius: 0.75rem !important; }
+            .stat-card .font-display-lg { font-size: 18px !important; }
+            .stat-card .font-label-md, .stat-card .text-label-md { font-size: 10px !important; }
+
+            .nav-link { font-size: 14px !important; }
+            nav { height: 64px !important; }
+        }
     </style>
 </head>
 
