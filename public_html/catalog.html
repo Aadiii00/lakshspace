@@ -73,9 +73,6 @@
             box-shadow: 0 12px 20px -3px rgba(0,0,0,0.12), 0 28px 35px -5px rgba(0,0,0,0.16);
         }
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-        input[type=range]::-webkit-slider-thumb { background: #b5000b; }
-        input[type=range]::-webkit-slider-runnable-track { background: #e5eeff; }
-        .card-hidden { display: none; }
         .btn-primary {
             background: linear-gradient(135deg, #b5000b 0%, #e30613 100%);
             box-shadow: 0 4px 20px rgba(181, 0, 11, 0.3);
@@ -85,6 +82,41 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 30px rgba(181, 0, 11, 0.4);
         }
+        /* Image placeholder style */
+        .img-placeholder {
+            background: linear-gradient(135deg, #e5eeff 0%, #d3e4fe 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #936e69;
+        }
+        .img-placeholder span.material-symbols-outlined {
+            font-size: 40px;
+            opacity: 0.5;
+        }
+        .img-placeholder p {
+            font-size: 12px;
+            font-weight: 600;
+            opacity: 0.6;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        /* Feature list items */
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: #575e70;
+            line-height: 1.4;
+        }
+        .feature-item .material-symbols-outlined {
+            font-size: 16px;
+            color: #b5000b;
+            flex-shrink: 0;
+        }
     </style>
 </head>
 <body class="bg-background text-on-background overflow-x-hidden">
@@ -93,9 +125,8 @@
     <nav class="fixed top-0 w-full z-[100] bg-white/90 backdrop-blur-xl border-b border-on-surface/10 shadow-lg h-20 transition-all duration-300">
         <div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-lg h-full">
             <a class="flex items-center gap-xs hover:opacity-90 transition-opacity" href="index.html">
-                <span class="text-2xl md:text-3xl font-extrabold tracking-tight"><span class="text-on-background">Laksh</span> <span class="text-primary">Space</span></span>
+                <img src="images-optimized/2.webp" alt="Laksh Space Logo" class="h-12 object-contain">
             </a>
-            
             <!-- Desktop Nav -->
             <div class="hidden md:flex items-center gap-lg">
                 <a class="nav-link text-secondary hover:text-primary transition-colors font-body-md text-body-md" href="catalog.html#office">Office Space</a>
@@ -103,7 +134,6 @@
                 <a class="nav-link text-secondary hover:text-primary transition-colors font-body-md text-body-md" href="catalog.html#virtual">Virtual Office</a>
                 <a class="nav-link text-secondary hover:text-primary transition-colors font-body-md text-body-md" href="catalog.html#meeting">Meeting Rooms</a>
             </div>
-            
             <div class="flex items-center gap-md">
                 <a href="https://wa.me/917348824242" target="_blank" class="hidden md:flex items-center gap-xs text-secondary hover:text-primary transition-colors group">
                     <span class="material-symbols-outlined group-hover:scale-110 transition-transform">call</span>
@@ -115,7 +145,6 @@
                 </button>
             </div>
         </div>
-        
         <!-- Mobile Dropdown Nav -->
         <div class="hidden md:hidden w-full bg-white/95 backdrop-blur-xl border-b border-on-surface/10 px-margin-mobile py-md flex flex-col gap-sm shadow-lg" id="mobile-menu">
             <a class="text-secondary hover:text-primary py-3 transition-colors font-body-md text-body-md border-b border-on-surface/5 hover:bg-surface-container px-3 rounded-lg" href="catalog.html#office" onclick="toggleMobileMenu()">Office Space</a>
@@ -142,250 +171,462 @@
             </div>
         </header>
 
-        <div>
-            <!-- Product Grid -->
-            <div id="product-grid">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+        <!-- Product Grid -->
+        <div id="product-grid">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
 
-                    <!-- Card 1: Single Seater Cabin -->
-                    <div class="glass-card rounded-2xl overflow-hidden group workspace-card" data-category="office">
-                        <div class="h-56 overflow-hidden relative">
-                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Single Seater Private Cabin" src="images-optimized/1 SEAT/IMG_6808.webp"/>
-                            <div class="absolute top-md right-md bg-tertiary text-white font-label-md text-label-md px-sm py-xs rounded-full flex items-center gap-xs text-xs">
-                                <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span> Available Now
-                            </div>
+                <!-- ==================== OFFICE SPACE CARDS ==================== -->
+
+                <!-- Card: Private Cabin -->
+                <div class="glass-card rounded-2xl overflow-hidden group workspace-card" data-category="office">
+                    <div class="h-56 overflow-hidden relative">
+                        <!-- Replace src with actual image path e.g. src="images-optimized/private-cabin.webp" -->
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 hidden" alt="Private Cabin" src="images-optimized/private-cabin.webp" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden')"/>
+                        <div class="img-placeholder w-full h-full">
+                            <span class="material-symbols-outlined">meeting_room</span>
+                            <p>Private Cabin</p>
                         </div>
-                        <div class="p-md">
-                            <div class="flex justify-between items-start mb-sm">
-                                <div>
-                                    <h3 class="font-headline-md text-headline-md">Single Seater Cabin</h3>
-                                    <p class="font-caption text-caption text-secondary">Private · Soundproof · RT Nagar</p>
-                                </div>
-                                <div class="text-right">
-                                    <p class="font-caption text-caption text-secondary">Starting at</p>
-                                    <p class="font-headline-md text-headline-md text-primary">₹8,999<span class="text-caption text-secondary font-normal">/mo</span></p>
-                                </div>
-                            </div>
-                            <div class="flex gap-md py-sm border-y border-outline-variant mb-md">
-                                <div class="flex items-center gap-xs text-secondary">
-                                    <span class="material-symbols-outlined text-[18px]">person</span>
-                                    <span class="font-label-md text-label-md">1 Person</span>
-                                </div>
-                                <div class="flex items-center gap-xs text-secondary">
-                                    <span class="material-symbols-outlined text-[18px]">wifi</span>
-                                    <span class="font-label-md text-label-md">Gbps Link</span>
-                                </div>
-                                <div class="flex items-center gap-xs text-secondary">
-                                    <span class="material-symbols-outlined text-[18px]">lock</span>
-                                    <span class="font-label-md text-label-md">Biometric</span>
-                                </div>
-                            </div>
-                            <div class="flex gap-sm">
-                                <a href="contact.html#quick-connect" class="flex-1 bg-primary text-white py-sm rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity text-center">Book Now</a>
-                                <a href="tel:+917348824242" class="px-md py-sm rounded-xl border border-outline-variant font-label-md text-label-md hover:bg-surface-container transition-all text-center flex items-center justify-center gap-xs">
-                                    <span class="material-symbols-outlined text-[18px]">call</span>
-                                    <span>Call</span>
-                                </a>
-                            </div>
+                        <div class="absolute top-md right-md bg-tertiary text-white font-label-md text-label-md px-sm py-xs rounded-full flex items-center gap-xs text-xs">
+                            <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span> Available Now
                         </div>
                     </div>
-
-                    <!-- Card 2: 2 Seater Cabin -->
-                    <div class="glass-card rounded-2xl overflow-hidden group workspace-card border-2 border-primary/30" data-category="office">
-                        <div class="h-56 overflow-hidden relative">
-                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="2 Seater Private Cabin" src="images-optimized/2 SEAT/IMG_6813.webp"/>
-                            <div class="absolute top-md left-md bg-primary text-white font-label-md text-label-md px-sm py-xs rounded-full text-xs">Most Popular</div>
+                    <div class="p-md">
+                        <div class="flex justify-between items-start mb-sm">
+                            <div>
+                                <h3 class="font-headline-md text-headline-md">Private Cabin</h3>
+                                <p class="font-caption text-caption text-secondary">Premium Workspace · RT Nagar</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-caption text-caption text-secondary">Starting at</p>
+                                <p class="font-headline-md text-headline-md text-primary">₹8,999<span class="text-caption text-secondary font-normal">/seat+GST</span></p>
+                            </div>
                         </div>
-                        <div class="p-md">
-                            <div class="flex justify-between items-start mb-sm">
-                                <div>
-                                    <h3 class="font-headline-md text-headline-md">2 Seater Cabin</h3>
-                                    <p class="font-caption text-caption text-secondary">Exclusive · Managed · RT Nagar</p>
-                                </div>
-                                <div class="text-right">
-                                    <p class="font-caption text-caption text-secondary">Starting at</p>
-                                    <p class="font-headline-md text-headline-md text-primary">₹16,999<span class="text-caption text-secondary font-normal">/mo</span></p>
-                                </div>
-                            </div>
-                            <div class="flex gap-md py-sm border-y border-outline-variant mb-md">
-                                <div class="flex items-center gap-xs text-secondary">
-                                    <span class="material-symbols-outlined text-[18px]">group</span>
-                                    <span class="font-label-md text-label-md">2 Persons</span>
-                                </div>
-                                <div class="flex items-center gap-xs text-secondary">
-                                    <span class="material-symbols-outlined text-[18px]">meeting_room</span>
-                                    <span class="font-label-md text-label-md">Meeting Credits</span>
-                                </div>
-                            </div>
-                            <div class="flex gap-sm">
-                                <a href="contact.html#quick-connect" class="flex-1 bg-primary text-white py-sm rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity text-center">Book Now</a>
-                                <a href="tel:+917348824242" class="px-md py-sm rounded-xl border border-outline-variant font-label-md text-label-md hover:bg-surface-container transition-all text-center flex items-center justify-center gap-xs">
-                                    <span class="material-symbols-outlined text-[18px]">call</span>
-                                    <span>Call</span>
-                                </a>
-                            </div>
+                        <ul class="grid grid-cols-2 gap-x-3 gap-y-1 py-sm border-y border-outline-variant mb-md">
+                            <li class="feature-item"><span class="material-symbols-outlined">workspace_premium</span>Premium Workspace</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">chair</span>Ergonomic Setup</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">meeting_room</span>Meeting Access</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">lock</span>Confidential Focus</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">wifi</span>Seamless Connectivity</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">shield</span>Business Privacy</li>
+                        </ul>
+                        <div class="flex gap-sm">
+                            <a href="contact.html#quick-connect" class="flex-1 btn-primary text-white py-sm rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity text-center">Reserve Now</a>
+                            <a href="tel:+919036395566" class="px-md py-sm rounded-xl border border-outline-variant font-label-md text-label-md hover:bg-surface-container transition-all text-center flex items-center justify-center gap-xs">
+                                <span class="material-symbols-outlined text-[18px]">call</span>
+                                <span>Call</span>
+                            </a>
                         </div>
                     </div>
-
-                    <!-- Card 3: 6 Seater Executive Suite -->
-                    <div class="glass-card rounded-2xl overflow-hidden group workspace-card" data-category="office">
-                        <div class="h-56 overflow-hidden relative">
-                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="6 Seater Executive Suite" src="images-optimized/6 SEAT/IMG_6809.webp"/>
-                        </div>
-                        <div class="p-md">
-                            <div class="flex justify-between items-start mb-sm">
-                                <div>
-                                    <h3 class="font-headline-md text-headline-md">6 Seater Suite</h3>
-                                    <p class="font-caption text-caption text-secondary">Executive · Team Ready · RT Nagar</p>
-                                </div>
-                                <div class="text-right">
-                                    <p class="font-caption text-caption text-secondary">Starting at</p>
-                                    <p class="font-headline-md text-headline-md text-primary">₹41,999<span class="text-caption text-secondary font-normal">/mo</span></p>
-                                </div>
-                            </div>
-                            <div class="flex gap-md py-sm border-y border-outline-variant mb-md">
-                                <div class="flex items-center gap-xs text-secondary">
-                                    <span class="material-symbols-outlined text-[18px]">groups</span>
-                                    <span class="font-label-md text-label-md">Up to 6 Persons</span>
-                                </div>
-                                <div class="flex items-center gap-xs text-secondary">
-                                    <span class="material-symbols-outlined text-[18px]">tv</span>
-                                    <span class="font-label-md text-label-md">Smart Display</span>
-                                </div>
-                            </div>
-                            <div class="flex gap-sm">
-                                <a href="contact.html#quick-connect" class="flex-1 bg-primary text-white py-sm rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity text-center">Book Now</a>
-                                <a href="tel:+917348824242" class="px-md py-sm rounded-xl border border-outline-variant font-label-md text-label-md hover:bg-surface-container transition-all text-center flex items-center justify-center gap-xs">
-                                    <span class="material-symbols-outlined text-[18px]">call</span>
-                                    <span>Call</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 4: Elite Boardroom -->
-                    <div class="glass-card rounded-2xl overflow-hidden group workspace-card" data-category="meeting">
-                        <div class="h-56 overflow-hidden relative">
-                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Elite Conference Boardroom" src="images-optimized/CONFERENCE/IMG_6850.webp"/>
-                        </div>
-                        <div class="p-md">
-                            <div class="flex justify-between items-start mb-sm">
-                                <div>
-                                    <h3 class="font-headline-md text-headline-md">Elite Boardroom</h3>
-                                    <p class="font-caption text-caption text-secondary">Smart TV · Hourly Booking · RT Nagar</p>
-                                </div>
-                                <div class="text-right">
-                                    <p class="font-caption text-caption text-secondary">Starting at</p>
-                                    <p class="font-headline-md text-headline-md text-primary">₹1,499<span class="text-caption text-secondary font-normal">/hr</span></p>
-                                </div>
-                            </div>
-                            <div class="flex gap-md py-sm border-y border-outline-variant mb-md">
-                                <div class="flex items-center gap-xs text-secondary">
-                                    <span class="material-symbols-outlined text-[18px]">groups</span>
-                                    <span class="font-label-md text-label-md">Up to 12</span>
-                                </div>
-                                <div class="flex items-center gap-xs text-secondary">
-                                    <span class="material-symbols-outlined text-[18px]">tv</span>
-                                    <span class="font-label-md text-label-md">4K Screen + AV</span>
-                                </div>
-                            </div>
-                            <div class="flex gap-sm">
-                                <a href="contact.html#quick-connect" class="flex-1 bg-primary text-white py-sm rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity text-center">Book Now</a>
-                                <a href="tel:+917348824242" class="px-md py-sm rounded-xl border border-outline-variant font-label-md text-label-md hover:bg-surface-container transition-all text-center flex items-center justify-center gap-xs">
-                                    <span class="material-symbols-outlined text-[18px]">call</span>
-                                    <span>Call</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 5: Hot Desk / Coworking -->
-                    <div class="glass-card rounded-2xl overflow-hidden group workspace-card" data-category="coworking">
-                        <div class="h-56 overflow-hidden relative">
-                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Hot Desk Coworking Space" src="images-optimized/galery-images/IMG_E6855.webp"/>
-                        </div>
-                        <div class="p-md">
-                            <div class="flex justify-between items-start mb-sm">
-                                <div>
-                                    <h3 class="font-headline-md text-headline-md">Hot Desk</h3>
-                                    <p class="font-caption text-caption text-secondary">Flexible · Social · RT Nagar</p>
-                                </div>
-                                <div class="text-right">
-                                    <p class="font-caption text-caption text-secondary">Starting at</p>
-                                    <p class="font-headline-md text-headline-md text-primary">₹499<span class="text-caption text-secondary font-normal">/day</span></p>
-                                </div>
-                            </div>
-                            <div class="flex gap-md py-sm border-y border-outline-variant mb-md">
-                                <div class="flex items-center gap-xs text-secondary">
-                                    <span class="material-symbols-outlined text-[18px]">bolt</span>
-                                    <span class="font-label-md text-label-md">Instant Access</span>
-                                </div>
-                                <div class="flex items-center gap-xs text-secondary">
-                                    <span class="material-symbols-outlined text-[18px]">print</span>
-                                    <span class="font-label-md text-label-md">Free Printing</span>
-                                </div>
-                            </div>
-                            <div class="flex gap-sm">
-                                <a href="contact.html#quick-connect" class="flex-1 bg-primary text-white py-sm rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity text-center">Book Now</a>
-                                <a href="tel:+917348824242" class="px-md py-sm rounded-xl border border-outline-variant font-label-md text-label-md hover:bg-surface-container transition-all text-center flex items-center justify-center gap-xs">
-                                    <span class="material-symbols-outlined text-[18px]">call</span>
-                                    <span>Call</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 6: Virtual Office -->
-                    <div class="glass-card rounded-2xl overflow-hidden group workspace-card" data-category="virtual">
-                        <div class="h-56 overflow-hidden relative">
-                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Virtual Office Business Address" src="images-optimized/Virtual Office.webp"/>
-                        </div>
-                        <div class="p-md">
-                            <div class="flex justify-between items-start mb-sm">
-                                <div>
-                                    <h3 class="font-headline-md text-headline-md">Virtual Office</h3>
-                                    <p class="font-caption text-caption text-secondary">GST Reg · Mail Handling · RT Nagar</p>
-                                </div>
-                                <div class="text-right">
-                                    <p class="font-caption text-caption text-secondary">Starting at</p>
-                                    <p class="font-headline-md text-headline-md text-primary">₹1,999<span class="text-caption text-secondary font-normal">/mo</span></p>
-                                </div>
-                            </div>
-                            <div class="flex gap-md py-sm border-y border-outline-variant mb-md">
-                                <div class="flex items-center gap-xs text-secondary">
-                                    <span class="material-symbols-outlined text-[18px]">location_on</span>
-                                    <span class="font-label-md text-label-md">Business Address</span>
-                                </div>
-                                <div class="flex items-center gap-xs text-secondary">
-                                    <span class="material-symbols-outlined text-[18px]">forward_to_inbox</span>
-                                    <span class="font-label-md text-label-md">Mail Handling</span>
-                                </div>
-                            </div>
-                            <div class="flex gap-sm">
-                                <a href="contact.html#quick-connect" class="flex-1 bg-primary text-white py-sm rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity text-center">Book Now</a>
-                                <a href="tel:+917348824242" class="px-md py-sm rounded-xl border border-outline-variant font-label-md text-label-md hover:bg-surface-container transition-all text-center flex items-center justify-center gap-xs">
-                                    <span class="material-symbols-outlined text-[18px]">call</span>
-                                    <span>Call</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
 
-                <!-- No results state -->
-                <div class="hidden text-center py-xl" id="no-results">
-                    <span class="material-symbols-outlined text-outline text-[64px]">search_off</span>
-                    <p class="text-secondary mt-md">No spaces match your filter. Try adjusting the category above.</p>
+                <!-- Card: Day Offices -->
+                <div class="glass-card rounded-2xl overflow-hidden group workspace-card" data-category="office">
+                    <div class="h-56 overflow-hidden relative">
+                        <!-- Replace src with actual image path e.g. src="images-optimized/day-office.webp" -->
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 hidden" alt="Day Offices" src="images-optimized/day-office.webp" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden')"/>
+                        <div class="img-placeholder w-full h-full">
+                            <span class="material-symbols-outlined">today</span>
+                            <p>Day Offices</p>
+                        </div>
+                    </div>
+                    <div class="p-md">
+                        <div class="flex justify-between items-start mb-sm">
+                            <div>
+                                <h3 class="font-headline-md text-headline-md">Day Offices</h3>
+                                <p class="font-caption text-caption text-secondary">Flexible Access · No Commitment · RT Nagar</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-caption text-caption text-secondary">Starting at</p>
+                                <p class="font-headline-md text-headline-md text-primary">₹500<span class="text-caption text-secondary font-normal">/day+GST</span></p>
+                            </div>
+                        </div>
+                        <ul class="grid grid-cols-2 gap-x-3 gap-y-1 py-sm border-y border-outline-variant mb-md">
+                            <li class="feature-item"><span class="material-symbols-outlined">bolt</span>Flexible Access</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">workspace_premium</span>Premium Setup</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">chair</span>Ergonomic Comfort</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">wifi</span>High-Speed Connectivity</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">meeting_room</span>Meeting Access</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">cancel</span>No Commitment</li>
+                        </ul>
+                        <div class="flex gap-sm">
+                            <a href="contact.html#quick-connect" class="flex-1 btn-primary text-white py-sm rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity text-center">Reserve Now</a>
+                            <a href="tel:+919036395566" class="px-md py-sm rounded-xl border border-outline-variant font-label-md text-label-md hover:bg-surface-container transition-all text-center flex items-center justify-center gap-xs">
+                                <span class="material-symbols-outlined text-[18px]">call</span>
+                                <span>Call</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- CTA Load More -->
-                <div class="mt-lg flex justify-center">
-                    <a href="contact.html" class="flex items-center gap-sm px-lg py-sm border border-primary text-primary font-bold rounded-xl hover:bg-primary/5 transition-all">
-                        <span>Request a Custom Space</span>
-                        <span class="material-symbols-outlined">arrow_forward</span>
-                    </a>
+                <!-- ==================== COWORKING CARDS ==================== -->
+
+                <!-- Card: Single Seat Private Cabin -->
+                <div class="glass-card rounded-2xl overflow-hidden group workspace-card" data-category="coworking">
+                    <div class="h-56 overflow-hidden relative">
+                        <!-- Replace src with actual image path e.g. src="images-optimized/1 SEAT/IMG_6808.webp" -->
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Single Seat Private Cabin" src="images-optimized/1 SEAT/IMG_6808.webp" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden')"/>
+                        <div class="img-placeholder w-full h-full hidden">
+                            <span class="material-symbols-outlined">person</span>
+                            <p>Single Seat Cabin</p>
+                        </div>
+                        <div class="absolute top-md right-md bg-tertiary text-white font-label-md text-label-md px-sm py-xs rounded-full flex items-center gap-xs text-xs">
+                            <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span> Available Now
+                        </div>
+                    </div>
+                    <div class="p-md">
+                        <div class="flex justify-between items-start mb-sm">
+                            <div>
+                                <h3 class="font-headline-md text-headline-md">Single Seat Private Cabin</h3>
+                                <p class="font-caption text-caption text-secondary">Dedicated · Soundproof · RT Nagar</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-caption text-caption text-secondary">Starting at</p>
+                                <p class="font-headline-md text-headline-md text-primary">₹8,999<span class="text-caption text-secondary font-normal">/mo+GST</span></p>
+                            </div>
+                        </div>
+                        <ul class="grid grid-cols-2 gap-x-3 gap-y-1 py-sm border-y border-outline-variant mb-md">
+                            <li class="feature-item"><span class="material-symbols-outlined">desk</span>Dedicated Workspace</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">chair</span>Ergonomic Comfort</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">lock</span>Complete Privacy</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">meeting_room</span>Meeting Access</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">wifi</span>High-Speed Internet</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">star</span>Premium Interiors</li>
+                        </ul>
+                        <div class="flex gap-sm">
+                            <a href="contact.html#quick-connect" class="flex-1 btn-primary text-white py-sm rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity text-center">Reserve Now</a>
+                            <a href="tel:+919036395566" class="px-md py-sm rounded-xl border border-outline-variant font-label-md text-label-md hover:bg-surface-container transition-all text-center flex items-center justify-center gap-xs">
+                                <span class="material-symbols-outlined text-[18px]">call</span>
+                                <span>Call</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Card: 2 Seat Private Cabin -->
+                <div class="glass-card rounded-2xl overflow-hidden group workspace-card border-2 border-primary/30" data-category="coworking">
+                    <div class="h-56 overflow-hidden relative">
+                        <!-- Replace src with actual image path e.g. src="images-optimized/2 SEAT/IMG_6813.webp" -->
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="2 Seat Private Cabin" src="images-optimized/2 SEAT/IMG_6813.webp" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden')"/>
+                        <div class="img-placeholder w-full h-full hidden">
+                            <span class="material-symbols-outlined">group</span>
+                            <p>2 Seat Cabin</p>
+                        </div>
+                        <div class="absolute top-md left-md bg-primary text-white font-label-md text-label-md px-sm py-xs rounded-full text-xs">Most Popular</div>
+                    </div>
+                    <div class="p-md">
+                        <div class="flex justify-between items-start mb-sm">
+                            <div>
+                                <h3 class="font-headline-md text-headline-md">2 Seat Private Cabin</h3>
+                                <p class="font-caption text-caption text-secondary">Ideal for Partners · RT Nagar</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-caption text-caption text-secondary">Starting at</p>
+                                <p class="font-headline-md text-headline-md text-primary">₹16,999<span class="text-caption text-secondary font-normal">/mo+GST</span></p>
+                            </div>
+                        </div>
+                        <ul class="grid grid-cols-2 gap-x-3 gap-y-1 py-sm border-y border-outline-variant mb-md">
+                            <li class="feature-item"><span class="material-symbols-outlined">workspace_premium</span>Premium Workspace</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">palette</span>Elegant Interiors</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">lock</span>Confidential Meetings</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">people</span>Seamless Collaboration</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">wifi</span>High-Speed Internet</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">trending_up</span>Business Growth</li>
+                        </ul>
+                        <div class="flex gap-sm">
+                            <a href="contact.html#quick-connect" class="flex-1 btn-primary text-white py-sm rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity text-center">Reserve Now</a>
+                            <a href="tel:+919036395566" class="px-md py-sm rounded-xl border border-outline-variant font-label-md text-label-md hover:bg-surface-container transition-all text-center flex items-center justify-center gap-xs">
+                                <span class="material-symbols-outlined text-[18px]">call</span>
+                                <span>Call</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: 6 Seat Private Cabin -->
+                <div class="glass-card rounded-2xl overflow-hidden group workspace-card" data-category="coworking">
+                    <div class="h-56 overflow-hidden relative">
+                        <!-- Replace src with actual image path e.g. src="images-optimized/6 SEAT/IMG_6809.webp" -->
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="6 Seat Private Cabin" src="images-optimized/6 SEAT/IMG_6809.webp" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden')"/>
+                        <div class="img-placeholder w-full h-full hidden">
+                            <span class="material-symbols-outlined">groups</span>
+                            <p>6 Seat Cabin</p>
+                        </div>
+                    </div>
+                    <div class="p-md">
+                        <div class="flex justify-between items-start mb-sm">
+                            <div>
+                                <h3 class="font-headline-md text-headline-md">6 Seat Private Cabin</h3>
+                                <p class="font-caption text-caption text-secondary">Spacious Team Cabin · RT Nagar</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-caption text-caption text-secondary">Starting at</p>
+                                <p class="font-headline-md text-headline-md text-primary">₹41,999<span class="text-caption text-secondary font-normal">/mo+GST</span></p>
+                            </div>
+                        </div>
+                        <ul class="grid grid-cols-2 gap-x-3 gap-y-1 py-sm border-y border-outline-variant mb-md">
+                            <li class="feature-item"><span class="material-symbols-outlined">groups</span>Spacious Team Cabin</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">palette</span>Elegant Interiors</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">lock</span>Complete Privacy</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">handshake</span>Collaborative Ambience</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">wifi</span>High-Speed Internet</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">trending_up</span>Business Growth</li>
+                        </ul>
+                        <div class="flex gap-sm">
+                            <a href="contact.html#quick-connect" class="flex-1 btn-primary text-white py-sm rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity text-center">Reserve Now</a>
+                            <a href="tel:+919036395566" class="px-md py-sm rounded-xl border border-outline-variant font-label-md text-label-md hover:bg-surface-container transition-all text-center flex items-center justify-center gap-xs">
+                                <span class="material-symbols-outlined text-[18px]">call</span>
+                                <span>Call</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== MEETING ROOM CARDS ==================== -->
+
+                <!-- Card: Meeting Room -->
+                <div class="glass-card rounded-2xl overflow-hidden group workspace-card" data-category="meeting">
+                    <div class="h-56 overflow-hidden relative">
+                        <!-- Replace src with actual image path e.g. src="images-optimized/CONFERENCE/IMG_6850.webp" -->
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Meeting Room" src="images-optimized/CONFERENCE/IMG_6850.webp" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden')"/>
+                        <div class="img-placeholder w-full h-full hidden">
+                            <span class="material-symbols-outlined">meeting_room</span>
+                            <p>Meeting Room</p>
+                        </div>
+                    </div>
+                    <div class="p-md">
+                        <div class="flex justify-between items-start mb-sm">
+                            <div>
+                                <h3 class="font-headline-md text-headline-md">Meeting Room</h3>
+                                <p class="font-caption text-caption text-secondary">4, 6, 8 Seater Options · RT Nagar</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-caption text-caption text-secondary">Starting at</p>
+                                <p class="font-headline-md text-headline-md text-primary">₹799<span class="text-caption text-secondary font-normal">/hr+GST</span></p>
+                            </div>
+                        </div>
+                        <ul class="grid grid-cols-2 gap-x-3 gap-y-1 py-sm border-y border-outline-variant mb-md">
+                            <li class="feature-item"><span class="material-symbols-outlined">meeting_room</span>Modern Meeting Spaces</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">palette</span>Elegant Interiors</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">tv</span>Smart Presentation Setup</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">lock</span>Confidential Environment</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">wifi</span>Seamless Connectivity</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">record_voice_over</span>Productive Discussions</li>
+                        </ul>
+                        <div class="flex gap-sm">
+                            <a href="contact.html#quick-connect" class="flex-1 btn-primary text-white py-sm rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity text-center">Book Now</a>
+                            <a href="tel:+919036395566" class="px-md py-sm rounded-xl border border-outline-variant font-label-md text-label-md hover:bg-surface-container transition-all text-center flex items-center justify-center gap-xs">
+                                <span class="material-symbols-outlined text-[18px]">call</span>
+                                <span>Call</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Interview Room -->
+                <div class="glass-card rounded-2xl overflow-hidden group workspace-card" data-category="meeting">
+                    <div class="h-56 overflow-hidden relative">
+                        <!-- Replace src with actual image path e.g. src="images-optimized/interview-room.webp" -->
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 hidden" alt="Interview Room" src="images-optimized/interview-room.webp" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden')"/>
+                        <div class="img-placeholder w-full h-full">
+                            <span class="material-symbols-outlined">record_voice_over</span>
+                            <p>Interview Room</p>
+                        </div>
+                    </div>
+                    <div class="p-md">
+                        <div class="flex justify-between items-start mb-sm">
+                            <div>
+                                <h3 class="font-headline-md text-headline-md">Interview Room</h3>
+                                <p class="font-caption text-caption text-secondary">Confidential · HR & Client Meetings · RT Nagar</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-caption text-caption text-secondary">Starting at</p>
+                                <p class="font-headline-md text-headline-md text-primary">₹799<span class="text-caption text-secondary font-normal">/hr+GST</span></p>
+                            </div>
+                        </div>
+                        <ul class="grid grid-cols-2 gap-x-3 gap-y-1 py-sm border-y border-outline-variant mb-md">
+                            <li class="feature-item"><span class="material-symbols-outlined">business_center</span>Professional Ambience</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">lock</span>Confidential Environment</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">chair</span>Comfortable Seating</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">volume_off</span>Noise-Free Space</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">tv</span>Smart Presentation Ready</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">calendar_month</span>Flexible Booking</li>
+                        </ul>
+                        <div class="flex gap-sm">
+                            <a href="contact.html#quick-connect" class="flex-1 btn-primary text-white py-sm rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity text-center">Book Now</a>
+                            <a href="tel:+919036395566" class="px-md py-sm rounded-xl border border-outline-variant font-label-md text-label-md hover:bg-surface-container transition-all text-center flex items-center justify-center gap-xs">
+                                <span class="material-symbols-outlined text-[18px]">call</span>
+                                <span>Call</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Training Room -->
+                <div class="glass-card rounded-2xl overflow-hidden group workspace-card" data-category="meeting">
+                    <div class="h-56 overflow-hidden relative">
+                        <!-- Replace src with actual image path e.g. src="images-optimized/training-room.webp" -->
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Training Room" src="images-optimized/training-room.webp" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden')"/>
+                        <div class="img-placeholder w-full h-full hidden">
+                            <span class="material-symbols-outlined">school</span>
+                            <p>Training Room</p>
+                        </div>
+                    </div>
+                    <div class="p-md">
+                        <div class="flex justify-between items-start mb-sm">
+                            <div>
+                                <h3 class="font-headline-md text-headline-md">Training Room</h3>
+                                <p class="font-caption text-caption text-secondary">Workshops & Seminars · RT Nagar</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-caption text-caption text-secondary">Starting at</p>
+                                <p class="font-headline-md text-headline-md text-primary">₹799<span class="text-caption text-secondary font-normal">/hr+GST</span></p>
+                            </div>
+                        </div>
+                        <ul class="grid grid-cols-2 gap-x-3 gap-y-1 py-sm border-y border-outline-variant mb-md">
+                            <li class="feature-item"><span class="material-symbols-outlined">open_with</span>Spacious Setup</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">people</span>Collaborative Environment</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">tv</span>Modern Presentation Tools</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">school</span>Ideal for Workshops</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">wifi</span>Seamless Connectivity</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">grid_view</span>Flexible Layout Options</li>
+                        </ul>
+                        <div class="flex gap-sm">
+                            <a href="contact.html#quick-connect" class="flex-1 btn-primary text-white py-sm rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity text-center">Book Now</a>
+                            <a href="tel:+919036395566" class="px-md py-sm rounded-xl border border-outline-variant font-label-md text-label-md hover:bg-surface-container transition-all text-center flex items-center justify-center gap-xs">
+                                <span class="material-symbols-outlined text-[18px]">call</span>
+                                <span>Call</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== VIRTUAL OFFICE CARDS ==================== -->
+
+                <!-- Card: New Company Registration Plan -->
+                <div class="glass-card rounded-2xl overflow-hidden group workspace-card" data-category="virtual">
+                    <div class="h-56 overflow-hidden relative">
+                        <!-- Replace src with actual image path e.g. src="images-optimized/company-registration.webp" -->
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 hidden" alt="New Company Registration Plan" src="images-optimized/company-registration.webp" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden')"/>
+                        <div class="img-placeholder w-full h-full">
+                            <span class="material-symbols-outlined">business</span>
+                            <p>Company Registration</p>
+                        </div>
+                    </div>
+                    <div class="p-md">
+                        <div class="flex justify-between items-start mb-sm">
+                            <div>
+                                <h3 class="font-headline-md text-headline-md">New Company Registration</h3>
+                                <p class="font-caption text-caption text-secondary">GST · Mail Handling · Pan India</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-caption text-caption text-secondary">From</p>
+                                <p class="font-headline-md text-headline-md text-primary">₹1,299<span class="text-caption text-secondary font-normal">/mo+GST</span></p>
+                            </div>
+                        </div>
+                        <ul class="grid grid-cols-2 gap-x-3 gap-y-1 py-sm border-y border-outline-variant mb-md">
+                            <li class="feature-item"><span class="material-symbols-outlined">location_on</span>Company Registration Address</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">receipt_long</span>GST Registration</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">forward_to_inbox</span>Mail & Courier Handling</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">badge</span>Address on Business Cards</li>
+                        </ul>
+                        <div class="flex gap-sm">
+                            <a href="contact.html#quick-connect" class="flex-1 btn-primary text-white py-sm rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity text-center">Get Started</a>
+                            <a href="tel:+919036395566" class="px-md py-sm rounded-xl border border-outline-variant font-label-md text-label-md hover:bg-surface-container transition-all text-center flex items-center justify-center gap-xs">
+                                <span class="material-symbols-outlined text-[18px]">call</span>
+                                <span>Call</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: New GST Registration -->
+                <div class="glass-card rounded-2xl overflow-hidden group workspace-card" data-category="virtual">
+                    <div class="h-56 overflow-hidden relative">
+                        <!-- Replace src with actual image path e.g. src="images-optimized/gst-registration.webp" -->
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 hidden" alt="New GST Registration" src="images-optimized/gst-registration.webp" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden')"/>
+                        <div class="img-placeholder w-full h-full">
+                            <span class="material-symbols-outlined">receipt_long</span>
+                            <p>GST Registration</p>
+                        </div>
+                    </div>
+                    <div class="p-md">
+                        <div class="flex justify-between items-start mb-sm">
+                            <div>
+                                <h3 class="font-headline-md text-headline-md">New GST Registration</h3>
+                                <p class="font-caption text-caption text-secondary">APOB · Mail Handling · Pan India</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-caption text-caption text-secondary">From</p>
+                                <p class="font-headline-md text-headline-md text-primary">₹999<span class="text-caption text-secondary font-normal">/mo+GST</span></p>
+                            </div>
+                        </div>
+                        <ul class="grid grid-cols-2 gap-x-3 gap-y-1 py-sm border-y border-outline-variant mb-md">
+                            <li class="feature-item"><span class="material-symbols-outlined">store</span>GST Reg. (APOB)</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">forward_to_inbox</span>Mail & Courier Handling</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">badge</span>Address on Business Cards</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">public</span>Pan India Operations</li>
+                        </ul>
+                        <div class="flex gap-sm">
+                            <a href="contact.html#quick-connect" class="flex-1 btn-primary text-white py-sm rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity text-center">Get Started</a>
+                            <a href="tel:+919036395566" class="px-md py-sm rounded-xl border border-outline-variant font-label-md text-label-md hover:bg-surface-container transition-all text-center flex items-center justify-center gap-xs">
+                                <span class="material-symbols-outlined text-[18px]">call</span>
+                                <span>Call</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Business Address Plan -->
+                <div class="glass-card rounded-2xl overflow-hidden group workspace-card" data-category="virtual">
+                    <div class="h-56 overflow-hidden relative">
+                        <!-- Replace src with actual image path e.g. src="images-optimized/Virtual Office.webp" -->
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Business Address Plan" src="images-optimized/Virtual Office.webp" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden')"/>
+                        <div class="img-placeholder w-full h-full hidden">
+                            <span class="material-symbols-outlined">location_on</span>
+                            <p>Business Address</p>
+                        </div>
+                    </div>
+                    <div class="p-md">
+                        <div class="flex justify-between items-start mb-sm">
+                            <div>
+                                <h3 class="font-headline-md text-headline-md">Business Address Plan</h3>
+                                <p class="font-caption text-caption text-secondary">Prime Location · Brand Credibility · RT Nagar</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-caption text-caption text-secondary">From</p>
+                                <p class="font-headline-md text-headline-md text-primary">₹416<span class="text-caption text-secondary font-normal">/mo+GST</span></p>
+                            </div>
+                        </div>
+                        <ul class="grid grid-cols-2 gap-x-3 gap-y-1 py-sm border-y border-outline-variant mb-md">
+                            <li class="feature-item"><span class="material-symbols-outlined">forward_to_inbox</span>Mail & Courier Handling</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">badge</span>Address for Official Use</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">location_on</span>Prime Location Advantage</li>
+                            <li class="feature-item"><span class="material-symbols-outlined">verified</span>Brand Credibility Enhancement</li>
+                        </ul>
+                        <div class="flex gap-sm">
+                            <a href="contact.html#quick-connect" class="flex-1 btn-primary text-white py-sm rounded-xl font-label-md text-label-md hover:opacity-90 transition-opacity text-center">Get Started</a>
+                            <a href="tel:+919036395566" class="px-md py-sm rounded-xl border border-outline-variant font-label-md text-label-md hover:bg-surface-container transition-all text-center flex items-center justify-center gap-xs">
+                                <span class="material-symbols-outlined text-[18px]">call</span>
+                                <span>Call</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /grid -->
+
+            <!-- No results state -->
+            <div class="hidden text-center py-xl" id="no-results">
+                <span class="material-symbols-outlined text-outline text-[64px]">search_off</span>
+                <p class="text-secondary mt-md">No spaces match your filter. Try adjusting the category above.</p>
+            </div>
+
+            <!-- CTA -->
+            <div class="mt-lg flex justify-center">
+                <a href="contact.html" class="flex items-center gap-sm px-lg py-sm border border-primary text-primary font-bold rounded-xl hover:bg-primary/5 transition-all">
+                    <span>Request a Custom Space</span>
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
             </div>
         </div>
     </main>
@@ -469,35 +710,22 @@
 
         // Hash-based filtering
         function applyHashFilter() {
-            const hash = window.location.hash.substring(1); // remove '#'
+            const hash = window.location.hash.substring(1);
             if (hash) {
                 const targetBtn = document.querySelector(`.chip-btn[data-filter="${hash}"]`);
-                if (targetBtn) {
-                    targetBtn.click();
-                }
+                if (targetBtn) targetBtn.click();
             } else {
                 const allBtn = document.querySelector('.chip-btn[data-filter="all"]');
-                if (allBtn) {
-                    allBtn.click();
-                }
+                if (allBtn) allBtn.click();
             }
         }
 
-        // Apply on load and on hash change
         window.addEventListener('load', applyHashFilter);
         window.addEventListener('hashchange', applyHashFilter);
 
-        // Seat counter
-        function adjustSeat(delta) {
-            const inp = document.getElementById('seat-count');
-            const newVal = Math.max(1, Math.min(50, parseInt(inp.value || 1) + delta));
-            inp.value = newVal;
-        }
-
         // Nav scroll effect
         window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            nav.classList.toggle('shadow-md', window.scrollY > 20);
+            document.querySelector('nav').classList.toggle('shadow-md', window.scrollY > 20);
         });
 
         // Mobile menu toggle
@@ -512,6 +740,19 @@
                 icon.innerText = 'menu';
             }
         }
+
+        // Smart image placeholder fallback:
+        // If an <img> loads successfully, hide the sibling placeholder div.
+        // If it errors, the onerror on each img already handles it.
+        document.querySelectorAll('.workspace-card img').forEach(img => {
+            img.addEventListener('load', function() {
+                this.classList.remove('hidden');
+                const placeholder = this.nextElementSibling;
+                if (placeholder && placeholder.classList.contains('img-placeholder')) {
+                    placeholder.classList.add('hidden');
+                }
+            });
+        });
     </script>
 </body>
 </html>
